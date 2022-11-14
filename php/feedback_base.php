@@ -19,18 +19,18 @@
     require_once 'constants.php';
     require_once 'utils.php';
     require_once 'database.php';
-
-    $has_submitted = isset($_POST['submit']);
-
-    $name_first = isset($_POST['name_first']) ? trim($_POST['name_first']) : null;
-    $name_last  = isset($_POST['name_last'])  ? trim($_POST['name_last'])  : null;
-    $email      = isset($_POST['email'])      ? trim($_POST['email'])      : null;
-    $subject    = isset($_POST['subject'])    ? trim($_POST['subject'])    : null;
-    $message    = isset($_POST['message'])    ? trim($_POST['message'])    : null;
-
+    
+    $submit_value = isset($_POST['submit'])     ? trim($_POST['submit'])     : null;
+    $name_first   = isset($_POST['name_first']) ? trim($_POST['name_first']) : null;
+    $name_last    = isset($_POST['name_last'])  ? trim($_POST['name_last'])  : null;
+    $email        = isset($_POST['email'])      ? trim($_POST['email'])      : null;
+    $subject      = isset($_POST['subject'])    ? trim($_POST['subject'])    : null;
+    $message      = isset($_POST['message'])    ? trim($_POST['message'])    : null;
+    
     // We do the checks below AFTER getting the values so we aren't easily fooled by
     // the user that our forms have been filled even though they submitted just spaces as the input.
     // The trim() that happens before this step is very important.
+    $has_submitted  = !empty($submit_value);
     $has_name_first = !empty($name_first);
     $has_name_last  = !empty($name_last);
     $has_email      = !empty($email);
@@ -46,6 +46,9 @@
     if(DEBUG_MODE)
     {
       echo sprintf('Has submitted: %s<br>',  boolToStr($has_submitted));
+      echo sprintf('Submit value: %s<br>',  $has_submitted ? $submit_value : 'nothing');
+      echo '<br>';
+
       echo sprintf('Has first name: %s<br>', boolToStr($has_name_first));
       echo sprintf('Has last name: %s<br>',  boolToStr($has_name_last));
       echo sprintf('Has email: %s<br>',      boolToStr($has_email));
@@ -64,7 +67,26 @@
     if($has_submitted && $has_name_first && $has_name_last && $has_email && $has_subject && $has_message
         && !($too_long_name_first || $too_long_name_last || $too_long_email || $too_long_subject || $too_long_message))
     {
-      insert_new_feedback($name_first, $name_last, $email, $subject, $message);
+      if($submit_value === 'feedback')
+      {
+        if(!insert_new_feedback($name_first, $name_last, $email, $subject, $message))
+        {
+          echo 'Something went wrong with inserting the new feedback<br>';
+        }
+      }
+      elseif(is_numeric($submit_value))
+      {
+        // TODO: Add check for whether the value is out of package count range
+
+        if(!insert_new_inquiry(intval($submit_value), $name_first, $name_last, $email, $subject, $message))
+        {
+          echo 'Something went wrong with inserting the new inquiry<br>';
+        }
+      }
+      else
+      {
+        echo 'The submit value is invalid<br>';
+      }
     }
   ?>
 
@@ -94,7 +116,13 @@
     <!-- This way, we can have multiple buttons that have the same "submit" name, but different submit values -->
     <!-- We can have a button with a value of "feedback", then another one with "package_0" for us to distinguish between the
     different packages and feedbacks -->
-    <button type="submit" name="submit" value="Submit">Click me!</button>
+    <button type="submit" name="submit" value="feedback">Send feedback!</button>
+
+    <!-- Package values start from 1 instead of 0 because a value of 0 fails the empty() check, apparently -->
+    <button type="submit" name="submit" value="1">Package 1</button>
+    <button type="submit" name="submit" value="2">Package 2</button>
+    <button type="submit" name="submit" value="3">Package 3</button>
+    <button type="submit" name="submit" value="4">Package 4</button>
   </form>
 </body>
 </html>
