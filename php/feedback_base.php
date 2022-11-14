@@ -18,6 +18,7 @@
   <?php
     require_once 'constants.php';
     require_once 'utils.php';
+    require_once 'database.php';
 
     $has_submitted = isset($_POST['submit']);
 
@@ -60,6 +61,12 @@
       echo '<br>';
     }
 
+    if($has_submitted && $has_name_first && $has_name_last && $has_email && $has_subject && $has_message
+        && !($too_long_name_first || $too_long_name_last || $too_long_email || $too_long_subject || $too_long_message))
+    {
+      insert_new_feedback($name_first, $name_last, $email, $subject, $message);
+    }
+
     function print_err_text_on_error($concerned_property, $has_no_input, $input_too_long)
     {
       global $has_submitted;
@@ -96,7 +103,12 @@
     <textarea name="message" id="message" cols="30" rows="10"></textarea><br>
     <?php print_err_text_on_error('message', !$has_message, $too_long_message) ?>
 
-    <input type="submit" name="submit" value="Submit">
+    <!-- <input type="submit" name="submit" value="Submit"> -->
+    <!-- Testing the use of a button here instead of the usual "submit" input control -->
+    <!-- This way, we can have multiple buttons that have the same "submit" name, but different submit values -->
+    <!-- We can have a button with a value of "feedback", then another one with "package_0" for us to distinguish between the
+    different packages and feedbacks -->
+    <button type="submit" name="submit" value="Submit">Click me!</button>
   </form>
 </body>
 </html>
