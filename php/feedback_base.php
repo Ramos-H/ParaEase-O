@@ -66,42 +66,28 @@
     {
       insert_new_feedback($name_first, $name_last, $email, $subject, $message);
     }
-
-    function print_err_text_on_error($concerned_property, $has_no_input, $input_too_long)
-    {
-      global $has_submitted;
-      $invalid_input_template = '<span class="invalid-input">%s</span><br>';
-      $no_input_message_template = 'Please enter your %s.';
-      $long_input_message_template = 'The %s you entered is too long.';
-
-      if($has_submitted)
-      {
-        if($has_no_input) { echo sprintf($invalid_input_template, sprintf($no_input_message_template, $concerned_property)); }
-        elseif ($input_too_long) { echo sprintf($invalid_input_template, sprintf($long_input_message_template, $concerned_property)); }
-      }
-    }
   ?>
 
   <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <label for="name_first">First Name</label><br>
     <input type="text" name="name_first" id="name_first"><br>
-    <?php print_err_text_on_error('first name', !$has_name_first, $too_long_name_first) ?>
+    <?php print_err_text_on_error('first name', $has_submitted, !$has_name_first, $too_long_name_first) ?>
     
     <label for="name_last">Last Name</label><br>
     <input type="text" name="name_last" id="name_last"><br>
-    <?php print_err_text_on_error('last name', !$has_name_last, $too_long_name_last) ?>
+    <?php print_err_text_on_error('last name', $has_submitted, !$has_name_last, $too_long_name_last) ?>
     
     <label for="email">Email</label><br>
     <input type="text" name="email" id="email"><br>
-    <?php print_err_text_on_error('email', !$has_email, $too_long_email) ?>
+    <?php print_err_text_on_error('email', $has_submitted, !$has_email, $too_long_email) ?>
     
     <label for="subject">Subject</label><br>
     <input type="text" name="subject" id="subject"><br>
-    <?php print_err_text_on_error('subject', !$has_subject, $too_long_subject) ?>
+    <?php print_err_text_on_error('subject', $has_submitted, !$has_subject, $too_long_subject) ?>
     
     <label for="message">Message</label><br>
     <textarea name="message" id="message" cols="30" rows="10"></textarea><br>
-    <?php print_err_text_on_error('message', !$has_message, $too_long_message) ?>
+    <?php print_err_text_on_error('message', $has_submitted, !$has_message, $too_long_message) ?>
 
     <!-- <input type="submit" name="submit" value="Submit"> -->
     <!-- Testing the use of a button here instead of the usual "submit" input control -->
