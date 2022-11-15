@@ -34,4 +34,66 @@
     if(!$preppedStmt) { return false; }
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
+
+  function get_total_feedback_count()
+  {
+    global $conn, $resolve_value;
+    $sql = 'SELECT COUNT(*) FROM `feedbacks`';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
+  }
+
+  function get_total_inquiry_count()
+  {
+    global $conn, $resolve_value;
+    $sql = 'SELECT COUNT(*) FROM `package_inquiries`';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
+  }
+
+  function get_all_feedbacks()
+  {
+    global $conn, $resolve_value;
+    $sql = 'SELECT * FROM `feedbacks`';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    $feedbacks = array();
+    if($preppedStmt->execute())
+    {
+      $result = $preppedStmt->get_result();
+      while($row = $result->fetch_assoc())
+      {
+        $feedbacks[] = $row;
+      }
+
+      return $feedbacks;
+    }
+
+    return false;
+  }
+
+  function get_all_inquiries()
+  {
+    global $conn, $resolve_value;
+    $sql = 'SELECT * FROM `package_inquiries`';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    $inquiries = array();
+    if($preppedStmt->execute())
+    {
+      $result = $preppedStmt->get_result();
+      while($row = $result->fetch_assoc())
+      {
+        $inquiries[] = $row;
+      }
+
+      return $inquiries;
+    }
+
+    return false;
+  }
 ?>
