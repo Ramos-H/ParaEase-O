@@ -35,7 +35,9 @@
     // If arrives here, is a valid user.
     echo "<p>Welcome $user.</p>";
     echo "<p>You are now in the database system.</p>";
-
+    // TODO: Add log out button
+    // TODO: Add feedback and inquiry resolution status updating feature
+    // TODO: Add sorting by resolution status and date
   ?>
 
   <?php require_once 'database.php'; ?>

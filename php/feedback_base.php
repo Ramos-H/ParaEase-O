@@ -117,6 +117,7 @@
     <button type="submit" name="submit" value="feedback">Send feedback!</button>
 
     <!-- Package values start from 1 instead of 0 because a value of 0 fails the empty() check, apparently -->
+    <!-- TODO: Maybe separate data handling between feedback and inquiry to prevent cross-contamination between tables -->
     <button type="submit" name="submit" value="1">Package 1</button>
     <button type="submit" name="submit" value="2">Package 2</button>
     <button type="submit" name="submit" value="3">Package 3</button>
