@@ -76,7 +76,6 @@
       }
       elseif(is_numeric($submit_value))
       {
-        // TODO: Add check for whether the value is out of package count range
         $package_id = intval($submit_value);
 
         if ($package_id < 1 || $package_id > PACKAGE_COUNT) {
@@ -115,11 +114,6 @@
     <textarea name="message" id="message" cols="30" rows="10"></textarea><br>
     <?php print_err_text_on_error('message', $has_submitted, !$has_message, $too_long_message) ?>
 
-    <!-- <input type="submit" name="submit" value="Submit"> -->
-    <!-- Testing the use of a button here instead of the usual "submit" input control -->
-    <!-- This way, we can have multiple buttons that have the same "submit" name, but different submit values -->
-    <!-- We can have a button with a value of "feedback", then another one with "package_0" for us to distinguish between the
-    different packages and feedbacks -->
     <button type="submit" name="submit" value="feedback">Send feedback!</button>
 
     <!-- Package values start from 1 instead of 0 because a value of 0 fails the empty() check, apparently -->
