@@ -57,13 +57,13 @@
           <?php $feedbacks = get_all_feedbacks(); ?>
           <?php foreach($feedbacks as $feedback): ?>
             <tr>
-              <td><input type="checkbox" name="resolve_<?php echo $feedback['id']?>"></td>
-              <td style="text-align: center"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_first']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_last']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['email']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
-              <td><textarea readonly><?php echo htmlspecialchars($feedback['message']) ?></textarea></td>
+              <td><input type="checkbox" name="resolve_<?php echo nl2br(htmlspecialchars($feedback['id']))?>"></td>
+              <td style="text-align: center"><?php echo nl2br(htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED')) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['name_first'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['name_last'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['email'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['subject'])) ?></td>
+              <td><textarea readonly><?php echo nl2br(htmlspecialchars($feedback['message'])) ?></textarea></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
@@ -87,14 +87,14 @@
           <?php $feedbacks = get_all_inquiries(); ?>
           <?php foreach($feedbacks as $feedback): ?>
             <tr>
-              <td><input type="checkbox" name="resolve_<?php echo htmlspecialchars($feedback['id'])?>"></td>
-              <td style="text-align: center"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
-              <td style="text-align: center"><?php echo htmlspecialchars($feedback['package_id']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_first']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_last']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['email']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
-              <td><textarea readonly><?php echo htmlspecialchars($feedback['message']) ?></textarea></td>
+              <td><input type="checkbox" name="resolve_<?php echo nl2br(htmlspecialchars($feedback['id']))?>"></td>
+              <td style="text-align: center"><?php echo nl2br(htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED')) ?></td>
+              <td style="text-align: center"><?php echo nl2br(htmlspecialchars($feedback['package_id'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['name_first'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['name_last'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['email'])) ?></td>
+              <td><?php echo nl2br(htmlspecialchars($feedback['subject'])) ?></td>
+              <td><textarea readonly><?php echo nl2br(htmlspecialchars($feedback['message'])) ?></textarea></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
