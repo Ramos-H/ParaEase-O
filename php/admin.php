@@ -58,12 +58,12 @@
           <?php foreach($feedbacks as $feedback): ?>
             <tr>
               <td><input type="checkbox" name="resolve_<?php echo $feedback['id']?>"></td>
-              <td style="text-align: center"><?php echo $feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED' ?></td>
-              <td><?php echo $feedback['name_first'] ?></td>
-              <td><?php echo $feedback['name_last'] ?></td>
-              <td><?php echo $feedback['email'] ?></td>
-              <td><?php echo $feedback['subject'] ?></td>
-              <td><textarea readonly><?php echo $feedback['message'] ?></textarea></td>
+              <td style="text-align: center"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
+              <td><?php echo htmlspecialchars($feedback['name_first']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['name_last']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['email']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
+              <td><textarea readonly><?php echo htmlspecialchars($feedback['message']) ?></textarea></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
@@ -87,14 +87,14 @@
           <?php $feedbacks = get_all_inquiries(); ?>
           <?php foreach($feedbacks as $feedback): ?>
             <tr>
-              <td><input type="checkbox" name="resolve_<?php echo $feedback['id']?>"></td>
-              <td style="text-align: center"><?php echo $feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED' ?></td>
-              <td style="text-align: center"><?php echo $feedback['package_id'] ?></td>
-              <td><?php echo $feedback['name_first'] ?></td>
-              <td><?php echo $feedback['name_last'] ?></td>
-              <td><?php echo $feedback['email'] ?></td>
-              <td><?php echo $feedback['subject'] ?></td>
-              <td><textarea readonly><?php echo $feedback['message'] ?></textarea></td>
+              <td><input type="checkbox" name="resolve_<?php echo htmlspecialchars($feedback['id'])?>"></td>
+              <td style="text-align: center"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
+              <td style="text-align: center"><?php echo htmlspecialchars($feedback['package_id']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['name_first']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['name_last']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['email']) ?></td>
+              <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
+              <td><textarea readonly><?php echo htmlspecialchars($feedback['message']) ?></textarea></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
