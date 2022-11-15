@@ -4,8 +4,8 @@
 
   // Database
   define('DB_HOST', 'localhost');
-  define('DB_USER', 'paraiso_server');
-  define('DB_PASS', 'PalawanParadise');
+  define('DB_USER', 'root');
+  define('DB_PASS', '');
   define('DB_NAME', 'db_paraiso');
 
   // MAX LIMITS
