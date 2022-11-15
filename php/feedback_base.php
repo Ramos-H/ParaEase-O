@@ -122,5 +122,12 @@
     <button type="submit" name="submit" value="3">Package 3</button>
     <button type="submit" name="submit" value="4">Package 4</button>
   </form>
+
+  <?php
+    // Show most popular package
+    $most_popular_package = get_most_popular_package();
+  ?>
+  
+  <h3>The most popular package is package number <?php echo !empty($most_popular_package) ? $most_popular_package : 'Error' ?></h3>
 </body>
 </html>
