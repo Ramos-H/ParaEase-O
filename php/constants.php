@@ -14,4 +14,6 @@
   define('MAX_LENGTH_EMAIL',      DEBUG_MODE ? 30 : 65535);
   define('MAX_LENGTH_SUBJECT',    DEBUG_MODE ? 30 : 65535);
   define('MAX_LENGTH_MESSAGE',    DEBUG_MODE ? 30 : 65535);
+
+  define('PACKAGE_COUNT', 3);
 ?>

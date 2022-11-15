@@ -77,7 +77,11 @@
       elseif(is_numeric($submit_value))
       {
         // TODO: Add check for whether the value is out of package count range
+        $package_id = intval($submit_value);
 
+        if ($package_id < 1 || $package_id > PACKAGE_COUNT) {
+          echo ("The package ID submitted was out of the range of available packages.<br>");
+        }
         if(!insert_new_inquiry(intval($submit_value), $name_first, $name_last, $email, $subject, $message))
         {
           echo 'Something went wrong with inserting the new inquiry<br>';
