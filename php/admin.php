@@ -17,13 +17,64 @@
 </head>
 <body>
   <?php
+    $name = "makten";
+    $pw = "ilovethis123";
+    $valid_passwords = array ($name => $pw);
+    $valid_users = array_keys($valid_passwords);
+
+    $user = $_SERVER['PHP_AUTH_USER'];
+    $pass = $_SERVER['PHP_AUTH_PW'];
+
+    $validation = (in_array($user, $valid_users)) && ($pass == $valid_passwords[$user]);
+
+    if (!$validation) {
+      header('WWW-Authenticate: Basic realm="My Realm"');
+      header('HTTP/1.0 401 Unauthorized');
+      die ("<br><br>You are not allowed to enter this database.");
+    }
+    
+    else {
+    // If arrives here, is a valid user.
+    echo "<p>Welcome $user.</p>";
+    echo "<p>You are now in the database system.</p>";
+    $name = "hi";
+    }
 
     // TODO: Add log out button
     // TODO: Add feedback and inquiry resolution status updating feature
     // TODO: Add sorting by resolution status and date
     
   ?>
-  <p>Click <a href="logout.php">here</a> to log-out.</p>
+
+<script type="text/javascript">
+function logout() {
+    var hexagon;
+    if (window.XMLHttpRequest) {
+        hexagon = new XMLHttpRequest();
+    }
+    // code for IE
+    else if (window.ActiveXObject) {
+        hexagon=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (window.ActiveXObject) {
+      // IE clear HTTP Authentication
+      document.execCommand("ClearAuthenticationCache");
+      window.location.href='admin.php';
+    } else {
+        hexagon.open("GET", 'admin.php', true, "logout", "logout");
+        hexagon.send("");
+        hexagon.onreadystatechange = function() {
+            if (hexagon.readyState == 4) {window.location.href='admin.php';}
+        }
+
+
+    }
+    return false;
+}
+</script>
+
+
+  <p>Click <a href="a" onclick="logout();">here</a> to log-out.</p>
 
   <?php require_once 'database.php'; ?>
   
