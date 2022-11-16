@@ -86,17 +86,17 @@
       </tr>
 
       <?php if(get_total_inquiry_count() > 0): ?>
-          <?php $feedbacks = get_all_inquiries(); ?>
-          <?php foreach($feedbacks as $feedback): ?>
+          <?php $inquiries = get_all_inquiries(); ?>
+          <?php foreach($inquiries as $inquiry): ?>
             <tr>
-              <td><input type="checkbox" name="resolve_<?php echo htmlspecialchars($feedback['id'])?>"></td>
-              <td style="text-align: center"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
-              <td style="text-align: center"><?php echo htmlspecialchars($feedback['package_id']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_first']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['name_last']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['email']) ?></td>
-              <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
-              <td><textarea readonly><?php echo nl2br(htmlspecialchars($feedback['message'])) ?></textarea></td>
+              <td><input type="checkbox" name="resolve_<?php echo htmlspecialchars($inquiry['id'])?>"></td>
+              <td style="text-align: center"><?php echo htmlspecialchars($inquiry['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></td>
+              <td style="text-align: center"><?php echo htmlspecialchars($inquiry['package_id']) ?></td>
+              <td><?php echo htmlspecialchars($inquiry['name_first']) ?></td>
+              <td><?php echo htmlspecialchars($inquiry['name_last']) ?></td>
+              <td><?php echo htmlspecialchars($inquiry['email']) ?></td>
+              <td><?php echo htmlspecialchars($inquiry['subject']) ?></td>
+              <td><textarea readonly><?php echo nl2br(htmlspecialchars($inquiry['message'])) ?></textarea></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
