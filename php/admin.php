@@ -111,6 +111,7 @@
         <th>Email</th>
         <th>Subject</th>
         <th>Message</th>
+        <th>Post Time</th>
       </tr>
       
       <?php if(get_total_feedback_count() > 0): ?>
@@ -124,6 +125,7 @@
             <td><?php echo htmlspecialchars($feedback['email']) ?></td>
             <td><?php echo htmlspecialchars($feedback['subject']) ?></td>
             <td><textarea readonly><?php echo nl2br(htmlspecialchars($feedback['message'])) ?></textarea></td>
+            <td><?php echo htmlspecialchars($feedback['post_time']) ?></td>
           </tr>
           <?php endforeach; ?>
       <?php endif; ?>
@@ -159,6 +161,7 @@
               <td><?php echo htmlspecialchars($inquiry['email']) ?></td>
               <td><?php echo htmlspecialchars($inquiry['subject']) ?></td>
               <td><textarea readonly><?php echo nl2br(htmlspecialchars($inquiry['message'])) ?></textarea></td>
+              <td><?php echo htmlspecialchars($inquiry['post_time']) ?></td>
             </tr>
           <?php endforeach; ?>
       <?php endif; ?>
