@@ -13,6 +13,14 @@
       padding-left: 5px;
       padding-right: 5px;
     }
+    textarea
+    {
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      outline: 0;
+      cursor: default;
+      resize: none;
+    }
   </style>
 </head>
 <body>
@@ -147,6 +155,7 @@
         <th>Email</th>
         <th>Subject</th>
         <th>Message</th>
+        <th>Post Time</th>
       </tr>
 
       <?php if(get_total_inquiry_count() > 0): ?>
