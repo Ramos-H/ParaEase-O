@@ -3,27 +3,27 @@
 
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  $resolve_value = 0;
+  $default_resolve_value = 0;
 
   if($conn->connect_error) { die('Connection failed' . $conn->connect_error); }
   if(DEBUG_MODE) { echo 'CONNECTED TO DATABASE!<br>'; }
 
   function insert_new_feedback($name_first, $name_last, $email, $subject, $message)
   {
-    global $conn, $resolve_value;
+    global $conn, $default_resolve_value;
     $sql = 'INSERT INTO `feedbacks` (`id`, `resolved`, `name_first`, `name_last`, `email`, `subject`, `message`, `post_time`) VALUES (NULL, ?, ?, ?, ?, ?, ?, current_timestamp())';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
-    return $preppedStmt->bind_param('isssss', $resolve_value, $name_first, $name_last, $email, $subject, $message) ? $preppedStmt->execute() : false;
+    return $preppedStmt->bind_param('isssss', $default_resolve_value, $name_first, $name_last, $email, $subject, $message) ? $preppedStmt->execute() : false;
   }
 
   function insert_new_inquiry($package_id, $name_first, $name_last, $email, $subject, $message)
   {
-    global $conn, $resolve_value;
+    global $conn, $default_resolve_value;
     $sql = 'INSERT INTO `package_inquiries` (`id`, `resolved`, `package_id`, `name_first`, `name_last`, `email`, `subject`, `message`, `post_time`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp())';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
-    return $preppedStmt->bind_param('iisssss', $resolve_value, $package_id, $name_first, $name_last, $email, $subject, $message) ? $preppedStmt->execute() : false;
+    return $preppedStmt->bind_param('iisssss', $default_resolve_value, $package_id, $name_first, $name_last, $email, $subject, $message) ? $preppedStmt->execute() : false;
   }
 
   function get_most_popular_package()
@@ -35,9 +35,10 @@
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
+  // TODO: Combine both get_count() functions into a general one
   function get_total_feedback_count()
   {
-    global $conn, $resolve_value;
+    global $conn;
     $sql = 'SELECT COUNT(*) FROM `feedbacks`';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
@@ -46,16 +47,17 @@
 
   function get_total_inquiry_count()
   {
-    global $conn, $resolve_value;
+    global $conn;
     $sql = 'SELECT COUNT(*) FROM `package_inquiries`';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
+  // TODO: Combine get all entries functions into a general one
   function get_all_feedbacks()
   {
-    global $conn, $resolve_value;
+    global $conn;
     $sql = 'SELECT * FROM `feedbacks`';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
@@ -77,7 +79,7 @@
 
   function get_all_inquiries()
   {
-    global $conn, $resolve_value;
+    global $conn;
     $sql = 'SELECT * FROM `package_inquiries`';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
@@ -95,5 +97,40 @@
     }
 
     return false;
+  }
+
+  function check_entry_existence($table_name, $id)
+  {
+    global $conn;
+    $sql = "SELECT COUNT(1) FROM `$table_name` WHERE id = ? LIMIT 1";
+    $preppedStmt = $conn->prepare($sql);
+
+    if(!$preppedStmt) { return false; }
+    if(!$preppedStmt->bind_param('i', $id)) { return false; }
+    if(!$preppedStmt->execute()) { return false; }
+
+    return ($preppedStmt->fetch() > 0);
+  }
+
+  function update_resolve_status($table_name, $new_value, $ids)
+  {
+    global $conn;
+    $sql = "UPDATE `$table_name` SET `resolved` = ? WHERE `$table_name`.`id` = ?";
+    $successful_updates = 0;
+
+    foreach($ids as $entry => $id)
+    {
+      if(check_entry_existence($table_name, $id))
+      {
+        // echo 'hello<br>';
+        // continue;
+        $preppedStmt = $conn->prepare($sql);
+        if(!$preppedStmt) { return false; }
+        if(!$preppedStmt->bind_param('ii', $new_value, $id)) { return false; }
+        if($preppedStmt->execute()) { $successful_updates++; }
+      }
+    }
+
+    return $successful_updates;
   }
 ?>
