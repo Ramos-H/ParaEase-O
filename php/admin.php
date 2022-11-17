@@ -17,7 +17,10 @@
 </head>
 <body>
   <?php
-    
+    session_start();
+    if(!isset($_SESSION['logged_in'])) {
+      header("Location: login.php");
+    }
    ?>
   <p>Click <a href="logout.php">here</a> to log-out.</p>
 
