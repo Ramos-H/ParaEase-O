@@ -35,30 +35,19 @@
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
-  // TODO: Combine both get_count() functions into a general one
-  function get_total_feedback_count()
+  function get_total_table_count($table_name)
   {
     global $conn;
-    $sql = 'SELECT COUNT(*) FROM `feedbacks`';
+    $sql = "SELECT COUNT(*) FROM `$table_name`";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
-  function get_total_inquiry_count()
+  function get_all_table_entries($table_name)
   {
     global $conn;
-    $sql = 'SELECT COUNT(*) FROM `package_inquiries`';
-    $preppedStmt = $conn->prepare($sql);
-    if(!$preppedStmt) { return false; }
-    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
-  }
-
-  // TODO: Combine get all entries functions into a general one
-  function get_all_feedbacks()
-  {
-    global $conn;
-    $sql = 'SELECT * FROM `feedbacks`';
+    $sql = "SELECT * FROM `$table_name`";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 
@@ -72,28 +61,6 @@
       }
 
       return $feedbacks;
-    }
-
-    return false;
-  }
-
-  function get_all_inquiries()
-  {
-    global $conn;
-    $sql = 'SELECT * FROM `package_inquiries`';
-    $preppedStmt = $conn->prepare($sql);
-    if(!$preppedStmt) { return false; }
-
-    $inquiries = array();
-    if($preppedStmt->execute())
-    {
-      $result = $preppedStmt->get_result();
-      while($row = $result->fetch_assoc())
-      {
-        $inquiries[] = $row;
-      }
-
-      return $inquiries;
     }
 
     return false;
@@ -122,8 +89,6 @@
     {
       if(check_entry_existence($table_name, $id))
       {
-        // echo 'hello<br>';
-        // continue;
         $preppedStmt = $conn->prepare($sql);
         if(!$preppedStmt) { return false; }
         if(!$preppedStmt->bind_param('ii', $new_value, $id)) { return false; }

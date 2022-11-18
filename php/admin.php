@@ -106,8 +106,8 @@
         <th>Post Time</th>
       </tr>
       
-      <?php if(get_total_feedback_count() > 0): ?>
-        <?php $feedbacks = get_all_feedbacks(); ?>
+      <?php if(get_total_table_count('feedbacks') > 0): ?>
+        <?php $feedbacks = get_all_table_entries('feedbacks');?>
         <?php foreach($feedbacks as $feedback): ?>
           <tr>
             <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]"></td>
@@ -142,8 +142,8 @@
         <th>Post Time</th>
       </tr>
 
-      <?php if(get_total_inquiry_count() > 0): ?>
-          <?php $inquiries = get_all_inquiries(); ?>
+      <?php if(get_total_table_count('package_inquiries') > 0): ?>
+          <?php $inquiries = get_all_table_entries('package_inquiries'); ?>
           <?php foreach($inquiries as $inquiry): ?>
             <tr>
               <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]"></td>
