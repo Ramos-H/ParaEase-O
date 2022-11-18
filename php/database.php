@@ -69,7 +69,7 @@
   function check_entry_existence($table_name, $id)
   {
     global $conn;
-    $sql = "SELECT COUNT(1) FROM `$table_name` WHERE id = ? LIMIT 1";
+    $sql = "SELECT COUNT(1) FROM `$table_name` WHERE `id` = ? LIMIT 1";
     $preppedStmt = $conn->prepare($sql);
 
     if(!$preppedStmt) { return false; }
@@ -97,5 +97,29 @@
     }
 
     return $successful_updates;
+  }
+
+  function create_default_admin()
+  {
+    global $conn;
+    $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, PASSWORD(?))';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+    return $preppedStmt->bind_param('ss', 'admin', 'password') ? $preppedStmt->execute() : false;
+  }
+
+  function verify_credentials($username, $password)
+  {
+    if(get_total_table_count('admins') < 1) { create_default_admin(); }
+
+    global $conn;
+    $sql = 'SELECT COUNT(1) FROM `admins` WHERE `username` = ? AND `password` = PASSWORD(?)';
+    $preppedStmt = $conn->prepare($sql);
+
+    if(!$preppedStmt) { return false; }
+    if(!$preppedStmt->bind_param('ss', $username, $password)) { return false; }
+    if(!$preppedStmt->execute()) { return false; }
+
+    return ($preppedStmt->fetch() > 0);
   }
 ?>
