@@ -1,5 +1,6 @@
 <?php
   require_once 'constants.php';
+  require_once 'utils.php';
 
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -130,10 +131,10 @@
     
     // Exit conditions
     if(!isset($new_username) && !isset($new_password)) { return false; }
-    if((strlen($new_username) < 1) && (strlen($new_password) < 1)) { return false; }
+    if(check_str_empty($new_username) && check_str_empty($new_password)) { return false; }
 
-    $has_new_username = (strlen($new_username) > 0);
-    $has_new_password = (strlen($new_password) > 0);
+    $has_new_username = check_str_empty($new_username);
+    $has_new_password = check_str_empty($new_password);
 
     // Add username to query if it's given
     if(isset($new_username)) 

@@ -26,10 +26,10 @@
         </form>
     <?php
         if(isset($_POST['submit'])) {
-            if (empty(trim($_POST['username'])) && empty(trim($_POST['password']))){
+            if (check_str_empty(trim($_POST['username'])) && check_str_empty(trim($_POST['password']))){
                 echo "<center>Please enter your username and password.</center>";
             }
-            else if (empty(trim($_POST['username'])) || empty(trim($_POST['password']))){
+            else if (check_str_empty(trim($_POST['username'])) || check_str_empty(trim($_POST['password']))){
                 echo "<center>Invalid Credentials.</center>";
             }
             else if (trim($_POST['username']) !== 'valid_username' && trim($_POST['password']) !=='valid_password' ){
