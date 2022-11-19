@@ -45,7 +45,7 @@
   $has_new_status   = !check_str_empty($new_status);
   $has_selected_ids = !check_str_empty($selected_ids);
 
-  $valid_table_value = ($table_value === 'feedbacks' || $table_value === 'package_inquiries');
+  $valid_table_value = ($table_value === TABLE_FEEDBACKS || $table_value === TABLE_PACK_INQ);
   $valid_new_status  = ($new_status  === '2' || $new_status  === '1');
 
   if(DEBUG_MODE)
@@ -106,8 +106,8 @@
         <th>Post Time</th>
       </tr>
       
-      <?php if(get_total_table_count('feedbacks') > 0): ?>
-        <?php $feedbacks = get_all_table_entries('feedbacks');?>
+      <?php if(get_total_table_count(TABLE_FEEDBACKS) > 0): ?>
+        <?php $feedbacks = get_all_table_entries(TABLE_FEEDBACKS);?>
         <?php foreach($feedbacks as $feedback): ?>
           <tr>
             <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]"></td>
@@ -122,7 +122,7 @@
           <?php endforeach; ?>
       <?php endif; ?>
     </table>
-    <input type="hidden" name="table" value="feedbacks">
+    <input type="hidden" name="table" value="<?php echo TABLE_FEEDBACKS; ?>">
     <button type="submit" name="status" value="2">Mark as resolved</button>
     <button type="submit" name="status" value="1">Mark as unresolved</button>
   </form>
@@ -142,8 +142,8 @@
         <th>Post Time</th>
       </tr>
 
-      <?php if(get_total_table_count('package_inquiries') > 0): ?>
-          <?php $inquiries = get_all_table_entries('package_inquiries'); ?>
+      <?php if(get_total_table_count(TABLE_PACK_INQ) > 0): ?>
+          <?php $inquiries = get_all_table_entries(TABLE_PACK_INQ); ?>
           <?php foreach($inquiries as $inquiry): ?>
             <tr>
               <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]"></td>
@@ -159,7 +159,7 @@
           <?php endforeach; ?>
       <?php endif; ?>
     </table>
-    <input type="hidden" name="table" value="package_inquiries">
+    <input type="hidden" name="table" value="<?php echo TABLE_PACK_INQ; ?>">
     <button type="submit" name="status" value="2">Mark as resolved</button>
     <button type="submit" name="status" value="1">Mark as unresolved</button>
   </form>
