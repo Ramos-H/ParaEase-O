@@ -8,6 +8,9 @@
   define('DB_PASS', '');
   define('DB_NAME', 'db_paraiso');
 
+  define('TABLE_FEEDBACKS', 'feedbacks');
+  define('TABLE_PACK_INQ', 'package_inquiries');
+
   // MAX LIMITS
   define('MAX_LENGTH_NAME_FIRST', DEBUG_MODE ? 30 : 65535);
   define('MAX_LENGTH_NAME_LAST',  DEBUG_MODE ? 30 : 65535);

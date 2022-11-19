@@ -1,5 +1,6 @@
 <?php
   require_once 'constants.php';
+  require_once 'utils.php';
 
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
   $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -35,30 +36,19 @@
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
-  // TODO: Combine both get_count() functions into a general one
-  function get_total_feedback_count()
+  function get_total_table_count($table_name)
   {
     global $conn;
-    $sql = 'SELECT COUNT(*) FROM `feedbacks`';
+    $sql = "SELECT COUNT(*) FROM `$table_name`";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
-  function get_total_inquiry_count()
-  {
-    global $conn;
-    $sql = 'SELECT COUNT(*) FROM `package_inquiries`';
-    $preppedStmt = $conn->prepare($sql);
-    if(!$preppedStmt) { return false; }
-    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
-  }
-
-  // TODO: Combine get all entries functions into a general one
   function get_all_feedbacks()
   {
     global $conn;
-    $sql = 'SELECT * FROM `feedbacks`';
+    $sql = "SELECT * FROM `feedbacks` ORDER BY `resolved` ASC";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 
@@ -77,23 +67,23 @@
     return false;
   }
 
-  function get_all_inquiries()
+  function get_all_package_inquiries()
   {
     global $conn;
-    $sql = 'SELECT * FROM `package_inquiries`';
+    $sql = "SELECT * FROM `package_inquiries` ORDER BY `resolved` ASC";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 
-    $inquiries = array();
+    $feedbacks = array();
     if($preppedStmt->execute())
     {
       $result = $preppedStmt->get_result();
       while($row = $result->fetch_assoc())
       {
-        $inquiries[] = $row;
+        $feedbacks[] = $row;
       }
 
-      return $inquiries;
+      return $feedbacks;
     }
 
     return false;
@@ -102,7 +92,7 @@
   function check_entry_existence($table_name, $id)
   {
     global $conn;
-    $sql = "SELECT COUNT(1) FROM `$table_name` WHERE id = ? LIMIT 1";
+    $sql = "SELECT COUNT(1) FROM `$table_name` WHERE `id` = ? LIMIT 1";
     $preppedStmt = $conn->prepare($sql);
 
     if(!$preppedStmt) { return false; }
@@ -122,8 +112,6 @@
     {
       if(check_entry_existence($table_name, $id))
       {
-        // echo 'hello<br>';
-        // continue;
         $preppedStmt = $conn->prepare($sql);
         if(!$preppedStmt) { return false; }
         if(!$preppedStmt->bind_param('ii', $new_value, $id)) { return false; }
@@ -132,5 +120,85 @@
     }
 
     return $successful_updates;
+  }
+
+  function create_default_admin()
+  {
+    global $conn;
+    $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, PASSWORD(?))';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+    return $preppedStmt->bind_param('ss', 'admin', 'password') ? $preppedStmt->execute() : false;
+  }
+
+  function verify_credentials($username, $password)
+  {
+    if(get_total_table_count('admins') < 1) { create_default_admin(); }
+
+    global $conn;
+    $sql = 'SELECT COUNT(1) FROM `admins` WHERE `username` = ? AND `password` = PASSWORD(?)';
+    $preppedStmt = $conn->prepare($sql);
+
+    if(!$preppedStmt) { return false; }
+    if(!$preppedStmt->bind_param('ss', $username, $password)) { return false; }
+    if(!$preppedStmt->execute()) { return false; }
+
+    return ($preppedStmt->fetch() > 0);
+  }
+
+  function update_credentials($new_username, $new_password)
+  {
+    global $conn;
+    $sql = 'UPDATE `admins` SET ';
+    
+    // Exit conditions
+    if(!isset($new_username) && !isset($new_password)) { return false; }
+    if(check_str_empty($new_username) && check_str_empty($new_password)) { return false; }
+
+    $has_new_username = check_str_empty($new_username);
+    $has_new_password = check_str_empty($new_password);
+
+    // Add username to query if it's given
+    if(isset($new_username)) 
+    {
+      if($has_new_username) { $sql .= '`username` = ?'; }
+    }
+    
+    // Add comma to separate the username and password queries if both username and password are present
+    if(isset($new_username) && isset($new_password))
+    {
+      if($has_new_username && $has_new_password) { $sql .= ', '; }
+    }
+    
+    // Add password to query if it's given
+    if(isset($new_password)) 
+    {
+      if($has_new_password) { $sql .= '`password` = ?'; }
+    }
+
+    // Last part of SQL statement
+    $sql .= ' WHERE `admins`.`id` = 1';
+
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    $param_bind_success = false;
+    if($has_new_username && !$has_new_password)
+    {
+      $param_bind_success = $preppedStmt->bind_param('s', $new_username);
+    }
+    elseif (!$has_new_username && $has_new_password) 
+    {
+      $param_bind_success = $preppedStmt->bind_param('s', $new_password);
+    }
+    elseif ($has_new_username && $has_new_password) 
+    {
+      $param_bind_success = $preppedStmt->bind_param('ss', $new_username, $new_password);
+    }
+
+    if(!$param_bind_success) { return false; }
+    if($preppedStmt->execute()) { $successful_updates++; }
+
+    return $preppedStmt->execute();
   }
 ?>
