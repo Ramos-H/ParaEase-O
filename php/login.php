@@ -1,12 +1,10 @@
 <?php
     session_start();
-    
-    if (!empty($_POST) && trim($_POST['username']) === 'valid_username' && trim($_POST['password']) === 'valid_password')
+    if (!empty($_POST) && trim($_POST['username']) === 'valid_username' && trim($_POST['password']) === $newpw)
     {
         $_SESSION['logged_in'] = true;
         header('Location: admin.php');
     }
-    
 ?>
 <html>
     <head>
