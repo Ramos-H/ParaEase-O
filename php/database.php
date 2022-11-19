@@ -45,10 +45,32 @@
     return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
   }
 
-  function get_all_table_entries($table_name)
+  function get_all_feedbacks()
   {
     global $conn;
-    $sql = "SELECT * FROM `$table_name`";
+    $sql = "SELECT * FROM `feedbacks` ORDER BY `resolved` ASC";
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    $feedbacks = array();
+    if($preppedStmt->execute())
+    {
+      $result = $preppedStmt->get_result();
+      while($row = $result->fetch_assoc())
+      {
+        $feedbacks[] = $row;
+      }
+
+      return $feedbacks;
+    }
+
+    return false;
+  }
+
+  function get_all_package_inquiries()
+  {
+    global $conn;
+    $sql = "SELECT * FROM `package_inquiries` ORDER BY `resolved` ASC";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 

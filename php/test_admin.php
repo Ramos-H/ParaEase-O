@@ -41,7 +41,7 @@
       </tr>
       
       <?php if(get_total_table_count(TABLE_FEEDBACKS) > 0): ?>
-        <?php $feedbacks = get_all_table_entries(TABLE_FEEDBACKS);?>
+        <?php $feedbacks = get_all_feedbacks(); ?>
         <?php foreach($feedbacks as $feedback): ?>
           <tr>
             <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]"></td>
@@ -79,7 +79,7 @@
       </tr>
 
       <?php if(get_total_table_count(TABLE_PACK_INQ) > 0): ?>
-          <?php $inquiries = get_all_table_entries(TABLE_PACK_INQ); ?>
+          <?php $inquiries = get_all_package_inquiries(); ?>
           <?php foreach($inquiries as $inquiry): ?>
             <tr>
               <td><input type="checkbox" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]"></td>
