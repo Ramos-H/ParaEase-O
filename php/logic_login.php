@@ -24,7 +24,7 @@
     else
     {
       $_SESSION['logged_in'] = true;
-      header('Location: admin.php');
+      header('Location: test_admin.php');
     }
   }
 ?>

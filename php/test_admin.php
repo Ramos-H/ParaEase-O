@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
+  <title>Admin Dashboard Test</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   <script src='main.js'></script>
@@ -26,7 +26,7 @@
 <body>
   <p>Click <a href="logout.php">here</a> to log-out.</p>
   <?php require_once 'logic_admin.php'; ?>
-  <form action="admin.php" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <h3>Feedback</h3>
     <table>
       <tr>
@@ -63,7 +63,7 @@
     <button type="submit" name="status" value="multiple_unresolve">Mark as unresolved</button>
   </form>
   
-  <form action="admin.php" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <h3>Package Inquiries</h3>
     <table>
       <tr>

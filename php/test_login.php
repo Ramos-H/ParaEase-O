@@ -1,7 +1,7 @@
 <?php require_once 'logic_login.php'; ?>
 <html>
     <head>
-        <title>User Login</title>
+        <title>Admin Login Test</title>
     </head>
     <body>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" align="center">

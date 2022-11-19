@@ -4,7 +4,7 @@
   require_once 'utils.php';
 
   session_start();
-  if(!isset($_SESSION['logged_in'])) { header("Location: login.php"); }
+  if(!isset($_SESSION['logged_in'])) { header("Location: test_login.php"); }
 
   $table_value  = isset($_POST['table'])  ? strtolower(trim(htmlspecialchars($_POST['table']))) : null;
   $new_status   = isset($_POST['status']) ? strtolower(trim(htmlspecialchars($_POST['status']))) : null;
