@@ -42,7 +42,9 @@
     $sql = "SELECT COUNT(*) FROM `$table_name`";
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
-    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
+    if(!$preppedStmt->execute()) { return false; } 
+    $result = $preppedStmt->get_result();
+    return !empty($result) ? $result->fetch_all()[0][0] : false;
   }
 
   function get_all_feedbacks()
@@ -197,7 +199,6 @@
     }
 
     if(!$param_bind_success) { return false; }
-    if($preppedStmt->execute()) { $successful_updates++; }
 
     return $preppedStmt->execute();
   }
