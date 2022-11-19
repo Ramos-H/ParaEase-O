@@ -130,7 +130,9 @@
     $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, PASSWORD(?))';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
-    return $preppedStmt->bind_param('ss', 'admin', 'password') ? $preppedStmt->execute() : false;
+    $default_username = 'admin';
+    $default_password = 'password';
+    return $preppedStmt->bind_param('ss', $default_username, $default_password) ? $preppedStmt->execute() : false;
   }
 
   function verify_credentials($username, $password)
