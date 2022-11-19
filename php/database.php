@@ -122,4 +122,60 @@
 
     return ($preppedStmt->fetch() > 0);
   }
+
+  function update_credentials($new_username, $new_password)
+  {
+    global $conn;
+    $sql = 'UPDATE `admins` SET ';
+    
+    // Exit conditions
+    if(!isset($new_username) && !isset($new_password)) { return false; }
+    if((strlen($new_username) < 1) && (strlen($new_password) < 1)) { return false; }
+
+    $has_new_username = (strlen($new_username) > 0);
+    $has_new_password = (strlen($new_password) > 0);
+
+    // Add username to query if it's given
+    if(isset($new_username)) 
+    {
+      if($has_new_username) { $sql .= '`username` = ?'; }
+    }
+    
+    // Add comma to separate the username and password queries if both username and password are present
+    if(isset($new_username) && isset($new_password))
+    {
+      if($has_new_username && $has_new_password) { $sql .= ', '; }
+    }
+    
+    // Add password to query if it's given
+    if(isset($new_password)) 
+    {
+      if($has_new_password) { $sql .= '`password` = ?'; }
+    }
+
+    // Last part of SQL statement
+    $sql .= ' WHERE `admins`.`id` = 1';
+
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    $param_bind_success = false;
+    if($has_new_username && !$has_new_password)
+    {
+      $param_bind_success = $preppedStmt->bind_param('s', $new_username);
+    }
+    elseif (!$has_new_username && $has_new_password) 
+    {
+      $param_bind_success = $preppedStmt->bind_param('s', $new_password);
+    }
+    elseif ($has_new_username && $has_new_password) 
+    {
+      $param_bind_success = $preppedStmt->bind_param('ss', $new_username, $new_password);
+    }
+
+    if(!$param_bind_success) { return false; }
+    if($preppedStmt->execute()) { $successful_updates++; }
+
+    return $preppedStmt->execute();
+  }
 ?>
