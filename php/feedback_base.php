@@ -30,12 +30,12 @@
     // We do the checks below AFTER getting the values so we aren't easily fooled by
     // the user that our forms have been filled even though they submitted just spaces as the input.
     // The trim() that happens before this step is very important.
-    $has_submitted  = !empty($submit_value);
-    $has_name_first = !empty($name_first);
-    $has_name_last  = !empty($name_last);
-    $has_email      = !empty($email);
-    $has_subject    = !empty($subject);
-    $has_message    = !empty($message);
+    $has_submitted  = !check_str_empty($submit_value);
+    $has_name_first = !check_str_empty($name_first);
+    $has_name_last  = !check_str_empty($name_last);
+    $has_email      = !check_str_empty($email);
+    $has_subject    = !check_str_empty($subject);
+    $has_message    = !check_str_empty($message);
 
     $too_long_name_first = $has_name_first ? (strlen($name_first) > MAX_LENGTH_NAME_FIRST) : false;
     $too_long_name_last  = $has_name_last  ? (strlen($name_last)  > MAX_LENGTH_NAME_LAST)  : false;
@@ -129,6 +129,6 @@
     $most_popular_package = get_most_popular_package();
   ?>
   
-  <h3>The most popular package is package number <?php echo !empty($most_popular_package) ? $most_popular_package : 'Error' ?></h3>
+  <h3>The most popular package is package number <?php echo !check_str_empty($most_popular_package) ? $most_popular_package : 'Error' ?></h3>
 </body>
 </html>

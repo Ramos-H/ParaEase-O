@@ -41,9 +41,9 @@
   $new_status   = isset($_POST['status']) ? trim(htmlspecialchars($_POST['status'])) : null;
   $selected_ids = $_POST['statuses'] ?? null;
 
-  $has_table_value  = !empty($table_value);
-  $has_new_status   = !empty($new_status);
-  $has_selected_ids = !empty($selected_ids);
+  $has_table_value  = !check_str_empty($table_value);
+  $has_new_status   = !check_str_empty($new_status);
+  $has_selected_ids = !check_str_empty($selected_ids);
 
   $valid_table_value = ($table_value === 'feedbacks' || $table_value === 'package_inquiries');
   $valid_new_status  = ($new_status  === '2' || $new_status  === '1');

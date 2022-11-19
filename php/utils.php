@@ -16,4 +16,9 @@ function print_err_text_on_error($concerned_property, $has_submitted, $has_no_in
     elseif ($input_too_long) { echo sprintf($invalid_input_template, sprintf($long_input_message_template, $concerned_property)); }
   }
 }
+
+function check_str_empty($str)
+{
+  return strlen($str) < 1;
+}
 ?>
