@@ -1,13 +1,4 @@
-<?php
-    session_start();
-    
-    if (!empty($_POST) && trim($_POST['username']) === 'valid_username' && trim($_POST['password']) === 'valid_password')
-    {
-        $_SESSION['logged_in'] = true;
-        header('Location: admin.php');
-    }
-    
-?>
+<?php require_once 'logic_login.php'; ?>
 <html>
     <head>
         <title>User Login</title>
@@ -24,18 +15,6 @@
         <input type="submit" name="submit" value="Submit">
         <input type="reset" name="reset">
         </form>
-    <?php
-        if(isset($_POST['submit'])) {
-            if (check_str_empty(trim($_POST['username'])) && check_str_empty(trim($_POST['password']))){
-                echo "<center>Please enter your username and password.</center>";
-            }
-            else if (check_str_empty(trim($_POST['username'])) || check_str_empty(trim($_POST['password']))){
-                echo "<center>Invalid Credentials.</center>";
-            }
-            else if (trim($_POST['username']) !== 'valid_username' && trim($_POST['password']) !=='valid_password' ){
-                echo "<center>Invalid Credentials.</center>";
-            }   
-        }   
-    ?>
+    <?php if(isset($errors[0])) { echo $errors[0]; } ?>
     </body>
 </html>
