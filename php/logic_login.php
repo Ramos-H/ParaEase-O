@@ -17,7 +17,7 @@
     {
       $errors[] = '<center>Please enter your username and password.</center>';
     }
-    else if(!$has_username || !$has_password || ($username !== 'valid_username' && $password !== 'valid_password'))
+    else if(!$has_username || !$has_password || !verify_credentials($username, $password))
     {
       $errors[] = '<center>Invalid Credentials.</center>';
     }
