@@ -127,7 +127,7 @@
   function create_default_admin()
   {
     global $conn;
-    $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, PASSWORD(?))';
+    $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, ?)';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
     $default_username = 'admin';
@@ -140,14 +140,15 @@
     if(get_total_table_count('admins') < 1) { create_default_admin(); }
 
     global $conn;
-    $sql = 'SELECT COUNT(1) FROM `admins` WHERE `username` = ? AND `password` = PASSWORD(?)';
+    $sql = 'SELECT COUNT(1) FROM `admins` WHERE `username` = ? AND `password` = ?';
     $preppedStmt = $conn->prepare($sql);
 
+    $i = 0;
     if(!$preppedStmt) { return false; }
     if(!$preppedStmt->bind_param('ss', $username, $password)) { return false; }
-    if(!$preppedStmt->execute()) { return false; }
-
-    return ($preppedStmt->fetch() > 0);
+    if(!$preppedStmt->execute()) { return false; } 
+    $result = $preppedStmt->get_result();
+    return !empty($result) ? ($result->fetch_all()[0][0] > 0) : false;
   }
 
   function update_credentials($new_username, $new_password)
@@ -158,9 +159,9 @@
     // Exit conditions
     if(!isset($new_username) && !isset($new_password)) { return false; }
     if(check_str_empty($new_username) && check_str_empty($new_password)) { return false; }
-
-    $has_new_username = check_str_empty($new_username);
-    $has_new_password = check_str_empty($new_password);
+    
+    $has_new_username = !check_str_empty($new_username);
+    $has_new_password = !check_str_empty($new_password);
 
     // Add username to query if it's given
     if(isset($new_username)) 
@@ -179,10 +180,8 @@
     {
       if($has_new_password) { $sql .= '`password` = ?'; }
     }
-
+    
     // Last part of SQL statement
-    $sql .= ' WHERE `admins`.`id` = 1';
-
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 
@@ -201,7 +200,6 @@
     }
 
     if(!$param_bind_success) { return false; }
-
     return $preppedStmt->execute();
   }
 ?>
