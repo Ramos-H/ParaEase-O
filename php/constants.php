@@ -1,6 +1,6 @@
 <?php 
   // Debugging
-  define('DEBUG_MODE', true);
+  define('DEBUG_MODE', false);
 
   // Database
   define('DB_HOST', 'localhost');
