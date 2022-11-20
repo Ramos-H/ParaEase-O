@@ -33,8 +33,8 @@
         $has_new_password     = !check_str_empty($new_password);
         $has_confirm_password = !check_str_empty($confirm_password);
 
-        $new_username_too_long = (strlen($new_username) > 30);
-        $new_password_too_short = (strlen($new_password) < 8);
+        $new_username_too_long  = (strlen($new_username) > MAX_LENGTH_FIELD);
+        $new_password_too_short = (strlen($new_password) < MIN_LENGTH_PASSWORD);
 
         if(DEBUG_MODE)
         {

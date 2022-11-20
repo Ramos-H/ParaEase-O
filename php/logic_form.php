@@ -20,11 +20,11 @@
   $has_subject    = !check_str_empty($subject);
   $has_message    = !check_str_empty($message);
 
-  $too_long_name_first = $has_name_first ? (strlen($name_first) > MAX_LENGTH_NAME_FIRST) : false;
-  $too_long_name_last  = $has_name_last  ? (strlen($name_last)  > MAX_LENGTH_NAME_LAST)  : false;
-  $too_long_email      = $has_email      ? (strlen($email)      > MAX_LENGTH_EMAIL)      : false;
-  $too_long_subject    = $has_subject    ? (strlen($subject)    > MAX_LENGTH_SUBJECT)    : false;
-  $too_long_message    = $has_message    ? (strlen($message)    > MAX_LENGTH_MESSAGE)    : false;
+  $too_long_name_first = $has_name_first ? (strlen($name_first) > MAX_LENGTH_FIELD)   : false;
+  $too_long_name_last  = $has_name_last  ? (strlen($name_last)  > MAX_LENGTH_FIELD)   : false;
+  $too_long_email      = $has_email      ? (strlen($email)      > MAX_LENGTH_FIELD)   : false;
+  $too_long_subject    = $has_subject    ? (strlen($subject)    > MAX_LENGTH_FIELD)   : false;
+  $too_long_message    = $has_message    ? (strlen($message)    > MAX_LENGTH_MESSAGE) : false;
 
   if(DEBUG_MODE)
   {

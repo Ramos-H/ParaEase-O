@@ -11,12 +11,10 @@
   define('TABLE_FEEDBACKS', 'feedbacks');
   define('TABLE_PACK_INQ', 'package_inquiries');
 
-  // MAX LIMITS
-  define('MAX_LENGTH_NAME_FIRST', DEBUG_MODE ? 30 : 65535);
-  define('MAX_LENGTH_NAME_LAST',  DEBUG_MODE ? 30 : 65535);
-  define('MAX_LENGTH_EMAIL',      DEBUG_MODE ? 30 : 65535);
-  define('MAX_LENGTH_SUBJECT',    DEBUG_MODE ? 30 : 65535);
-  define('MAX_LENGTH_MESSAGE',    DEBUG_MODE ? 30 : 65535);
+  // INPUT LIMITS
+  define('MAX_LENGTH_FIELD', 30);
+  define('MAX_LENGTH_MESSAGE', 10000);
+  define('MIN_LENGTH_PASSWORD', 8);
 
   define('PACKAGE_COUNT', 3);
 ?>
