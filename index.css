@@ -2,6 +2,12 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    --title: 60px;
+    --content: 30px;
+
+    --margin-a: 90px;
+    --margin-b: 210px;
+    --margin-c: 330px
 }
 
 .sticky-container { 
@@ -20,12 +26,17 @@
     width: 30%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.left-column-package-a { 
+    background-color: white;
 }
 
 .right-column { 
     width: 70%;
     height: 100%;
-    filter: brightness(70%);
+    filter: brightness(120%);
 }
 
 .package-bg-a { 
@@ -47,20 +58,12 @@
     background-size: cover;
 }
 
-.left-column { 
-    position: relative;
-}
-.left-column-package-a { 
-    background-color: white;
-}
-
 .package-content { 
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    padding-right: 180px;
+    align-items: center;
     width: 100%;
     min-height: 40vh;
     position: absolute;
@@ -69,26 +72,55 @@
 }
 
 .package-content-text { 
-    font-size: 50px;
+    font-size: var(--content);
     font-family: "Poppins", sans-serif;
     color: #2B3533;
 }
 
 .package-title {
     text-align: right;
-    font-size: 120px;
+    font-size: var(--title);
     font-family: "Feeling Passionate", sans-serif;
-    padding-right: 180px;
     color: #859657;
+    text-align: center;
 }
 
 .package-title-a { 
-    margin-top: 90px;
+    margin-top: var(--margin-a);
 }
 .package-title-b { 
-    margin-top: 270px;
+    margin-top: var(--margin-b);
 }
 .package-title-c { 
-    margin-top: 450px;
+    margin-top: var(--margin-c);
 }
 
+@media only screen and (max-width: 1300px) {
+    * { 
+        --title: 50px;
+        --content: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    * {
+        --margin-a: 30px;
+        --margin-b: 30px;
+        --margin-c: 30px;
+    }
+
+    .sticky-container { 
+        flex-direction: column-reverse;
+    }
+    .left-column { 
+        width: 80%;
+    }
+    .right-column { 
+        width: 80%;
+        height: calc(100%-10px);
+        margin-top: 10px;
+    }
+    .package-title { 
+        background-color: white;
+    }
+}
