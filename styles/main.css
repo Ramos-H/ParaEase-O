@@ -1,25 +1,22 @@
  /**********NAV BAR ************/
-.navbar-brand {
-    width: 300px;         
-     }
+ .navbar-brand {
+  width: 300px;         
+   }
 
- .navbar-nav {
-     font-family: 'Poppins', sans-serif;
-     font-size: 14.4px;
-     color: #606C5F; 
- }
+.navbar-nav {
+   font-family: 'Poppins', sans-serif;
+   font-size: 14.4px;
+   color: #606C5F; 
+}
 
- .navbar {
-     background-color: #F8F3F3;
- }
-
- .active a{
-   border-bottom: 3px solid #606C5F;
- }
- .navbar-toggler {
-   color:#606C5F ;
+.navbar {
    background-color: #F8F3F3;
- }
+}
+
+.navbar-toggler {
+  color:#606C5F ;
+  background-color: #F8F3F3;
+}
 
  /**********BODY-HOMEPAGE************/
 

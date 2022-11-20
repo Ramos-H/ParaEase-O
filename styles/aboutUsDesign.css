@@ -1,34 +1,33 @@
+.navbar-brand {
+  width: 300px;         
+   }
+
+.navbar-nav {
+   font-family: 'Poppins', sans-serif;
+   font-size: 14.4px;
+   color: #606C5F; 
+}
+
+.navbar {
+   background-color: #F8F3F3;
+}
+
+.navbar-toggler {
+  color:#606C5F ;
+  background-color: #F8F3F3;
+}
+
 .body-aboutUs{
   background-color: #E4E6D0;
 }
 
-.navbar{
-  background-color: #F8F3F3;
-}
-.image-responsive-navbar-aboutUs{
-  height: auto;
-}
-
-@media screen and (max-width: 1000px) {
-  .image-responsive-navbar-aboutUs {
-       width: 65%;
-  }
-}
-
-@media screen and (max-width: 280px) {
-  .navbar-toggler-right{
-   width: 25%;
-   height: 20%;
-  }
-}
-
 .conatiner-aboutUs{
-      position:relative;
-      display: flex;
-      top: 15vh;
-      align-items: center; /* y- axis */
-      justify-content: center; /* x -axis*/
-      height: 105vh;
+  position:relative;
+  display: flex;
+  top: 15vh;
+  align-items: center; /* y- axis */
+  justify-content: center; /* x -axis*/
+  height: 105vh;
 }
 
 .image-responsive{
@@ -55,12 +54,12 @@ text-align: left;
 }
 
 .hr-style-aboutUs{
-        width: 100%;
-        height: 10px;
-        background-color: #8F9657;
-        border: 0 none;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+    width: 100%;
+    height: 10px;
+    background-color: #8F9657;
+    border: 0 none;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .container-logos-connectWithUs{
