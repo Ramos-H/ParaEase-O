@@ -1,3 +1,9 @@
+* { 
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 .sticky-container { 
     height: 100vh;
     width: 100%;
@@ -6,18 +12,20 @@
     align-items: center;
     position: sticky;
     top: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .left-column { 
-    width: 50%;
+    width: 30%;
     height: 100%;
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .right-column { 
-    width: 50%;
+    width: 70%;
     height: 100%;
-    background-color: blue;
+    filter: brightness(70%);
 }
 
 .package-bg-a { 
@@ -39,10 +47,48 @@
     background-size: cover;
 }
 
+.left-column { 
+    position: relative;
+}
+.left-column-package-a { 
+    background-color: white;
+}
+
+.package-content { 
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 180px;
+    width: 100%;
+    min-height: 40vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 .package-content-text { 
-    font-size: 64px;
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+    color: #2B3533;
 }
 
 .package-title {
-    font-size: 124px;
+    text-align: right;
+    font-size: 120px;
+    font-family: "Feeling Passionate", sans-serif;
+    padding-right: 180px;
+    color: #859657;
 }
+
+.package-title-a { 
+    margin-top: 90px;
+}
+.package-title-b { 
+    margin-top: 270px;
+}
+.package-title-c { 
+    margin-top: 450px;
+}
+
