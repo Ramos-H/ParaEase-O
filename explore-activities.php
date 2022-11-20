@@ -19,37 +19,8 @@
 
 </head>
 <body class="body-activities">
-        <header>
-            <!-- Navigation Bar -->
-            <nav class="navbar navbar-expand-lg fixed-top px-5">
-                <a href="index.php"><img class= "navbar-brand" src="assets/ParaEase'O_Brand.png" alt="ParaEase'O Brand"></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                  <ul class="navbar-nav ms-auto">
-                    <li class="nav-item pe-5">
-                      <a class="nav-link" href="/index.php">HOME</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown pe-5">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        EXPLORE
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="explore-places.html">Go-To Places</a></li>
-                        <li><a class="dropdown-item active" href="#">Go-To Activities</a></li>
-                        <li><a class="dropdown-item" href="explore-packages.html">Travel Packages</a></li>
-                      </ul>
-                    </li>
-                      
-                    <li class="nav-item">
-                      <a class="nav-link" href="/about.php">ABOUT US</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-             <!-- End of Navigation Bar -->
-        </header>
+<?php include 'inc/header.php'?>
+        
 <main>
     <h1 class="h1-activities text-center">Your go-to activities!</h1>
     <h6 class="h6-activities text-center">FEATURED EL NIDO ACTIVITIES</h6>

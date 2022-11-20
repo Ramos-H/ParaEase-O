@@ -16,41 +16,10 @@
     <link rel="stylesheet" href="styles/aboutUsDesign.css">
 
     <!--Main JS-->
+
  
 <body class="body-aboutUs">
-
-  <header class="header-aboutUs">
-    <title>ParaEase'O</title>
-      <!-- Navigation Bar -->
-      <nav class="navbar navbar-expand-lg fixed-top px-5">
-        <img class= "navbar-brand image-responsive-navbar-aboutUs" src="assets/ParaEase'O_Brand.png" alt="ParaEase'O Brand">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item pe-5">
-                <a class="nav-link" href="index.html">HOME</a>
-              </li>
-              
-              <li class="nav-item dropdown pe-5">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  EXPLORE
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#explore.html">Di ko alam</a></li>
-                  <li><a class="dropdown-item" href="#explore.html">Di ko alam</a></li>
-                  <li><a class="dropdown-item" href="#explore.html">Di ko alam</a></li>
-                </ul>
-              </li>
-                
-              <li class="nav-item active">
-                <a class="nav-link" href="#">ABOUT US</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-       <!-- End of Navigation Bar -->
-  </header>
+  <?php include 'inc/header.php'?>
 
   <!--Main body-->
   <!--About Us start-->
@@ -161,8 +130,8 @@
        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </div>
-  
 
 
 </body>

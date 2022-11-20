@@ -21,33 +21,7 @@
 
 </head>
 <body class="body-homepage">
-        <nav class="navbar navbar-expand-lg fixed-top px-4">
-            <a href="#"><img class= "navbar-brand" src="assets/ParaEase'O_Brand.png" alt="ParaEase'O Brand"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item active pe-5">
-                  <a class="nav-link" href="#">HOME</a>
-                </li>
-                
-                <li class="nav-item dropdown pe-5">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    EXPLORE
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="explore-places.html">GO-TO PLACES</a></li>
-                    <li><a class="dropdown-item" href="explore-activities.html">GO-TO ACTIVITIES</a></li>
-                    <li><a class="dropdown-item" href="explore-packages.html">TRAVEL PACKAGES</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link">ABOUT US</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <?php include 'inc/header.php'?>
 
       <header class="masthead-homepage align-items-center">
         <div class="container px-4 px-lg-5 text-center">
