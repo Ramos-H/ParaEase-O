@@ -126,6 +126,7 @@
 
   function create_default_admin()
   {
+    reset_admins_increment_value();
     global $conn;
     $sql = 'INSERT INTO `admins` (`id`, `username`, `password`) VALUES (NULL, ?, ?)';
     $preppedStmt = $conn->prepare($sql);
@@ -226,6 +227,15 @@
     }
 
     if(!$param_bind_success) { return false; }
+    return $preppedStmt->execute();
+  }
+
+  function reset_admins_increment_value()
+  {
+    global $conn;
+    $sql = 'ALTER TABLE admins auto_increment = 1';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
     return $preppedStmt->execute();
   }
 ?>
