@@ -102,6 +102,13 @@
     }
 }
 
+@media only screen and (max-height: 1000px) {
+    * { 
+        --title: 50px;
+        --content: 20px;
+    }
+}
+
 @media only screen and (max-width: 800px){
     * {
         --margin-a: 30px;
