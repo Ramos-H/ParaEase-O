@@ -3,6 +3,9 @@
   require_once 'database.php';
   require_once 'constants.php';
 
+  session_start();
+  if(!isset($_SESSION['logged_in'])) { header("Location: test_login.php"); }
+
   if(isset($_POST['submit'])) // when user submit POST request
   {
     $username         = isset($_POST['username'])         ? trim($_POST['username'])         : null;
