@@ -1,0 +1,48 @@
+.sticky-container { 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.left-column { 
+    width: 50%;
+    height: 100%;
+    background-color: red;
+}
+
+.right-column { 
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+}
+
+.package-bg-a { 
+    background-image: url('./assets/img/big-lagoon.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+.package-bg-b { 
+    background-image: url('./assets/img/cudugnon-cave.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+.package-bg-c { 
+    background-image: url('./assets/img/secret-beach.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+.package-content-text { 
+    font-size: 64px;
+}
+
+.package-title {
+    font-size: 124px;
+}
