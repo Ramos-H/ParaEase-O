@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
 
     <!--Main CSS-->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="styles/index.css">
 
 
 
@@ -22,7 +22,7 @@
 </head>
 <body class="body-homepage">
         <nav class="navbar navbar-expand-lg fixed-top px-4">
-            <a href="#"><img class= "navbar-brand" src="assets/img/ParaEase'O_Brand.png" alt="ParaEase'O Brand"></a>
+            <a href="#"><img class= "navbar-brand" src="assets/ParaEase'O_Brand.png" alt="ParaEase'O Brand"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,7 +43,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#about.html">ABOUT US</a>
+                  <a class="nav-link">ABOUT US</a>
                 </li>
               </ul>
             </div>
@@ -78,12 +78,3 @@
 </body>
 </html>
 
-<!--  <div class="row">
-          <div class="col-6 border">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241609.576289215!2d119.45416559033447!3d11.192972260553368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b65515ef5c9e0f%3A0xfc4e665b599b0455!2sEl%20Nido%2C%20Palawan!5e0!3m2!1sen!2sph!4v1668441207367!5m2!1sen!2sph" width="680" height="680" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="col-6 text-center pt-5">
-            <h1 class=""> Welcome to El Nido!</h1>
-              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repellendus est, debitis cumque dicta maiores non minima aspernatur pariatur, maxime quam, ut sit nisi reprehenderit fuga. At veritatis nisi magnam? lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi cupiditate, possimus dicta illo veniam quis unde eos adipisci perspiciatis, et architecto quas eius expedita excepturi porro, officiis accusamus consequuntur consequatur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam necessitatibus sit deleniti aliquid consequuntur suscipit dolore natus nesciunt voluptates, expedita itaque eveniet quia nemo? Distinctio excepturi ratione voluptatem repudiandae?</p>
-            </div>
-          </div> -->

@@ -36,7 +36,7 @@
   position: relative;
   padding-top: 15rem;
   padding-bottom: 16rem;
-  background: url(../img/homepage_bgimg.jpg) no-repeat center center fixed;
+  background: url("../assets/homepage_bgimg.jpg") no-repeat center center fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -119,7 +119,7 @@ section{
   position: relative;
   padding-top: 15rem;
   padding-bottom: 16rem;
-  background: url(../img/packages-bg.jpg) no-repeat center center fixed;
+  background: url("../assets/packages-bg.jpg") no-repeat center center fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -167,7 +167,7 @@ section{
 }
 
 .map-section{
-  background: url(../img/bg-explore.png) fixed;
+  background: url("../assets/bg-explore.png") fixed;
   
 }
 
