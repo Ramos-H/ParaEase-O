@@ -132,23 +132,49 @@
     if(!$preppedStmt) { return false; }
     $default_username = 'admin';
     $default_password = 'password';
-    return $preppedStmt->bind_param('ss', $default_username, $default_password) ? $preppedStmt->execute() : false;
+    $hashed_password = password_hash($default_password, PASSWORD_DEFAULT);
+    return $preppedStmt->bind_param('ss', $default_username, $hashed_password) ? $preppedStmt->execute() : false;
+  }
+
+  function get_admins_with_username($username)
+  {
+    global $conn;
+    $sql = 'SELECT `username`, `password` FROM `admins` WHERE `username` = ?';
+    $preppedStmt = $conn->prepare($sql);
+    if(!$preppedStmt) { return false; }
+
+    if(!$preppedStmt->bind_param('s', $username)) { return false; }
+
+    $feedbacks = array();
+    if($preppedStmt->execute())
+    {
+      $result = $preppedStmt->get_result();
+      while($row = $result->fetch_assoc())
+      {
+        $admins[] = $row;
+      }
+
+      return $admins ?? array();
+    }
+
+    return false;
   }
 
   function verify_credentials($username, $password)
   {
     if(get_total_table_count('admins') < 1) { create_default_admin(); }
 
-    global $conn;
-    $sql = 'SELECT COUNT(1) FROM `admins` WHERE `username` = ? AND `password` = ?';
-    $preppedStmt = $conn->prepare($sql);
+    $admins = get_admins_with_username($username);
 
-    $i = 0;
-    if(!$preppedStmt) { return false; }
-    if(!$preppedStmt->bind_param('ss', $username, $password)) { return false; }
-    if(!$preppedStmt->execute()) { return false; } 
-    $result = $preppedStmt->get_result();
-    return !empty($result) ? ($result->fetch_all()[0][0] > 0) : false;
+    if(!empty($admins))
+    {
+      foreach ($admins as $admin)
+      {
+        if(password_verify($password, $admin['password'])) { return true; }
+      }
+    }
+
+    return false;
   }
 
   function update_credentials($new_username, $new_password)
