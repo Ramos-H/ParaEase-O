@@ -42,7 +42,7 @@
                         <h1>₱ 1,300</h1>
                         <p>per pax</p>
                         <a href="#">
-                        <button type="button" class="btn-lg btn select-btn px-3 py-1">SELECT PACKAGE</button>
+                        <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button-2">SELECT PACKAGE</button>
                      </a>                
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <h1>₱ 1,400</h1>
                         <p>per pax</p>
                         <a href="#">
-                        <button type="button" class="btn-lg btn select-btn px-3 py-1">SELECT PACKAGE</button>
+                        <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button-3">SELECT PACKAGE</button>
                         </a>                
                     </div>
                 </div>
@@ -69,6 +69,60 @@
                 <div class="row">
                   <div class="col-4 text-center">
                     <h1 class="h1-tour">Tour A</h1>
+                    <h2 class="h2-tour">₱ 1,200<h2>
+                    <h6 class="h6-tour">per pax</h6>
+                  </div>
+                  <div class="col-7">
+                    <form name="myForm" onsubmit="return validateForm()" method="post" >
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" name="fname" placeholder="First Name">
+                        </div>
+                        <div class="col">
+                          <input type="text" name="lname" placeholder="Last Name">
+                        </div>
+                      </div>
+
+                          <input type="text" name="email" placeholder="Email / Contact Number">
+                          <input type="text" name="subject" placeholder="Subject">
+                          <br>
+                          <textarea placeholder="Message / Concerns / Requests" class="textarea-forms" name="message" id="message"></textarea>
+                      
+                      <div class="container container-bg">
+                      <div class="row">
+                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
+                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
+                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
+                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
+                      </div>  
+                      </div>
+                      <a href="#">
+                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" value="Submit">Book</button>
+                      </a>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- end of modal -->
+
+            <!---modal section-->
+            <div class="bg-modal-2">
+              <div class="modal-content">
+
+                <div class="close-2">+</div>
+                <h1 class="h1-forms">Ready to Explore?</h1>
+                <hr class="hr-forms">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <h1 class="h1-tour">Tour B</h1>
                     <h2 class="h2-tour">₱ 1,200<h2>
                     <h6 class="h6-tour">per pax</h6>
                   </div>
@@ -111,6 +165,61 @@
                 
               </div>
             </div>
+            <!-- end of modal -->
+
+            <!---modal section-->
+            <div class="bg-modal-3">
+              <div class="modal-content">
+
+                <div class="close-3">+</div>
+                <h1 class="h1-forms">Ready to Explore?</h1>
+                <hr class="hr-forms">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <h1 class="h1-tour">Tour C</h1>
+                    <h2 class="h2-tour">₱ 1,200<h2>
+                    <h6 class="h6-tour">per pax</h6>
+                  </div>
+                  <div class="col-7">
+                    <form name="myForm" onsubmit="return validateForm()" method="post">
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" name="fname" placeholder="First Name">
+                        </div>
+                        <div class="col">
+                          <input type="text" name="lname" placeholder="Last Name">
+                        </div>
+                      </div>
+
+                          <input type="text" name="email" placeholder="Email / Contact Number">
+                          <input type="text" name="subject" placeholder="Subject">
+                          <br>
+                          <textarea placeholder="Message / Concerns / Requests" class="textarea-forms" name="message" id="message"></textarea>
+                      
+                      <div class="container container-bg">
+                      <div class="row">
+                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
+                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
+                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
+                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
+                      </div>  
+                      </div>
+                      <a href="#">
+                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" value="Submit">Book</button>
+                      </a>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- end of modal -->
 
           </div>
         </div>
