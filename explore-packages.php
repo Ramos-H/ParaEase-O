@@ -19,6 +19,7 @@
 </head>
 <body class="body-packages">
   <?php include 'inc/header.php'?>
+  <?php require_once 'php/logic_form.php'; ?>
       <header class="masthead-packages">
           <div class="container-fluid text-center d-flex justify-content-center">
           
@@ -73,13 +74,13 @@
                     <h6 class="h6-tour">per pax</h6>
                   </div>
                   <div class="col-7">
-                    <form name="myForm" onsubmit="return validateForm()" method="post" >
+                    <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
                       <div class="row">
                         <div class="col">
-                          <input type="text" name="fname" placeholder="First Name">
+                          <input type="text" name="name_first" placeholder="First Name">
                         </div>
                         <div class="col">
-                          <input type="text" name="lname" placeholder="Last Name">
+                          <input type="text" name="name_last" placeholder="Last Name">
                         </div>
                       </div>
 
@@ -103,7 +104,7 @@
                       </div>  
                       </div>
                       <a href="#">
-                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" value="Submit">Book</button>
+                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="1">Book</button>
                       </a>
                     </form>
                   </div>
@@ -127,13 +128,13 @@
                     <h6 class="h6-tour">per pax</h6>
                   </div>
                   <div class="col-7">
-                    <form name="myForm" onsubmit="return validateForm()" method="post">
+                    <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                       <div class="row">
                         <div class="col">
-                          <input type="text" name="fname" placeholder="First Name">
+                          <input type="text" name="name_first" placeholder="First Name">
                         </div>
                         <div class="col">
-                          <input type="text" name="lname" placeholder="Last Name">
+                          <input type="text" name="name_last" placeholder="Last Name">
                         </div>
                       </div>
 
@@ -157,7 +158,7 @@
                       </div>  
                       </div>
                       <a href="#">
-                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" value="Submit">Book</button>
+                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="2">Book</button>
                       </a>
                     </form>
                   </div>
@@ -181,13 +182,13 @@
                     <h6 class="h6-tour">per pax</h6>
                   </div>
                   <div class="col-7">
-                    <form name="myForm" onsubmit="return validateForm()" method="post">
+                    <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                       <div class="row">
                         <div class="col">
-                          <input type="text" name="fname" placeholder="First Name">
+                          <input type="text" name="name_first" placeholder="First Name">
                         </div>
                         <div class="col">
-                          <input type="text" name="lname" placeholder="Last Name">
+                          <input type="text" name="name_last" placeholder="Last Name">
                         </div>
                       </div>
 
@@ -211,7 +212,7 @@
                       </div>  
                       </div>
                       <a href="#">
-                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" value="Submit">Book</button>
+                        <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="3">Book</button>
                       </a>
                     </form>
                   </div>
