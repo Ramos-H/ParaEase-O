@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
 
     <!--Main CSS-->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="styles/index.css">
 
 
 
