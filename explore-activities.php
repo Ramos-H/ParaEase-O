@@ -15,7 +15,7 @@
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/main.css">
 
-    <title>ParaEase'O</title>
+    <title>ParaEase'O | Your Go-To Activities</title>
 
 </head>
 <body class="body-activities">

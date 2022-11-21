@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/main.css">
-    <title>ParaEase'O</title>
+    <title>ParaEase'O | Travel Packages</title>
   </head>
 
   <body class="body-packages">

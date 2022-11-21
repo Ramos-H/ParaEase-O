@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/aboutUsDesign.css">
     <!--Form JS-->
     <script src="scripts/forms.js"></script>
+    <title>ParaEase'O | About Us</title>
   </head>
   <body class="body-aboutUs">
     <?php include 'inc/header.php'?>

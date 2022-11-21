@@ -17,7 +17,7 @@
 
 
 
-    <title>ParaEase'O</title>
+    <title>ParaEase'O | El Nido, Palawan Tourism Portal</title>
 
 </head>
 <body class="body-homepage">
