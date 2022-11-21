@@ -41,7 +41,7 @@
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-2 content">
               <h1 class="pt-5"> Welcome to El Nido!</h1>
-              <p class="pt-md-5 px-5"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repellendus est, debitis cumque dicta maiores non minima aspernatur pariatur, maxime quam, ut sit nisi reprehenderit fuga. At veritatis nisi magnam? lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi cupiditate, possimus dicta illo veniam quis unde eos adipisci perspiciatis, et architecto quas eius expedita excepturi porro, officiis accusamus consequuntur consequatur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam necessitatibus sit deleniti aliquid consequuntur suscipit dolore natus nesciunt voluptates, expedita itaque eveniet quia nemo? Distinctio excepturi ratione voluptatem repudiandae?</p>
+              <p class="pt-md-5 px-5">El Nido is the primary base for exploring Palawan's star attraction thanks to its paradise-like attractions of white sand, turquoise waters, vibrant coral reefs, and stunning limestone cliffs The gateway to the magnificent Bacuit Archipelago, which consists of 45 islands and islets, each with its own geological formation highlight the true wonders of the Municipality. It's no surprise that El Nido has consistently been ranked as one of the best island destinations in the world, not just in the Philippines.There are a ton of things to do in El Nido, so what are you waiting for? Pack your bags and get ready for an unforgettable adventure with the islands, nature and the sea all packed with beautiful scenery!</p>
             </div>
 
         </div>
