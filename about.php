@@ -13,7 +13,8 @@
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/aboutUsDesign.css">
-    <!--Main JS-->
+    <!--Form JS-->
+    <script src="scripts/forms.js"></script>
   </head>
   <body class="body-aboutUs">
     <?php include 'inc/header.php'?>
@@ -76,37 +77,42 @@
             <!--End of Col-8-->
         </div>
         <div class="col-md-8">
-          <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return form_submit(this)">
             <!--Fname Lname-->
             <div class="row g-2 form-adjust-connectWithUs" style="gap: 1vw;">
               <div class="col-md">
                 <div class="form-floating">
-                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_first" name="name_first" placeholder="First Name" required>
+                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_first" name="name_first" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
                   <label for="name_first">First Name</label>
+                  <div class="invalid-feedback">Error text here</div>
                 </div>
               </div>
               <div class="col-md">
                 <div class="form-floating">
-                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_last" name="name_last" placeholder="Last Name" required>
+                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_last" name="name_last" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
                   <label for="name_last">Last Name</label>
+                  <div class="invalid-feedback">Error text here</div>
                 </div>
               </div>
             </div>
             <!--End of Fname Lname-->
             <!--Email-->
             <div class="form-floating">
-              <input type="email" class="form-control form-adjust-connectWithUs" id="email" name="email" placeholder="Email (Example: name@domain.com)" required>
+              <input type="email" class="form-control form-adjust-connectWithUs" id="email" name="email" placeholder="Email (Example: name@domain.com)" onchange="check_field_validity(this, 'email')" required>
               <label for="email">Email Address</label>
+              <div class="invalid-feedback">Error text here</div>
             </div>
             <!--Address-->
             <div class="form-floating">
-              <input class="form-control form-adjust-connectWithUs" id="subject" name="subject" placeholder="Subject" required>
+              <input class="form-control form-adjust-connectWithUs" id="subject" name="subject" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
               <label for="subject">Subject</label>
+              <div class="invalid-feedback">Error text here</div>
             </div>
             <!--Text Area-->
             <div class="form-floating form-adjust-connectWithUs">
-              <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px" required></textarea required>
+              <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px" onchange="check_text_area_validity(this, 'message')" required></textarea required>
               <label for="message">Message</label>
+              <div class="invalid-feedback">Error text here</div>
             </div>
             <!--Button-->
             <div class="container container-button-connectWithUs" style="margin-top: 3vh;">
