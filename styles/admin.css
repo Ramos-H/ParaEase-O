@@ -1,0 +1,175 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    
+}
+
+body { 
+    background-color: #F8F3F3;
+    overflow-x: hidden;
+}
+
+.blue { 
+    background-color: blue;
+}
+.header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+.header > span { 
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.logout-btn { 
+    background-color: #2B3533;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: #8F9657 2px 2px 2px;
+
+}
+
+.admin-container { 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.left-sidebar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 20px;
+    width: 20%;
+    height: 200px;
+    transform: rotate(90deg);
+    gap: 10px;
+}
+.left-sidebar span { 
+    color: white;
+    text-align: center;
+    padding:30px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.right-sidebar { 
+    width: 80%;
+}
+
+.content-container { 
+    padding: 30px;
+}
+
+.package-container { 
+    width: 70%;
+    display: none;
+}
+
+.feedback-wrapper { 
+    background-color: #e4e6d0;
+    margin: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 15px;
+}
+#status { 
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    margin-right: 10px;
+}
+
+.row-0 { 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.green { 
+    color: green;
+    font-weight: bold;
+}
+.red { 
+    color: red;
+    font-weight: bold;
+}
+
+.row-1 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+}
+.row-3 { 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.row-4 { 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.row-3 { 
+    width: 100%;
+}
+.row-3 p { 
+    line-height: 15px;
+}
+.resolution-btn {
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    width: 150px;
+    box-shadow: black 2px 2px 2px;
+    color: white;
+    cursor: pointer;
+}
+.btn-resolve { 
+    background-color: green;
+}
+.btn-resolve:hover { 
+    background-color: lightgreen;
+}
+.btn-unresolve { 
+    background-color: maroon;
+}
+.btn-unresolve:hover { 
+    background-color: red;
+}
+
+.none {
+    display: none;
+}
+.display { 
+    display: block;
+}
+.colored { 
+    background-color: #2B3533;
+}
+.uncolored { 
+    background-color: #606c5f
+}
+.uncolored:hover { 
+    background-color: #2B3533;
+}
