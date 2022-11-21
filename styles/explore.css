@@ -24,7 +24,7 @@
 
  /********* PLACES **********/
  .body-places{
-    background-image: url(../img/bg-explore.png);
+    background-image: url(../img/bg-explore.jpg);
     background-repeat: repeat-y;
     background-size: cover;
  }
@@ -63,7 +63,7 @@
  /*** ACTIVITIES ***/
 
  .body-activities{
-    background-image: url(../img/bg-explore.png);
+    background-image: url(../img/bg-explore.jpg);
     background-repeat: repeat-y;
     background-size: cover;
  }

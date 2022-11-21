@@ -167,7 +167,7 @@ section{
 }
 
 .map-section{
-  background: url("../assets/bg-explore.png") fixed;
+  background: url("../assets/bg-explore.jpg") fixed;
   
 }
 
@@ -323,19 +323,19 @@ input{
 }
 
 .package-bg-a { 
-  background-image: url('../assets/big-lagoon.png');
+  background-image: url('../assets/big-lagoon.jpg');
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
 }
 .package-bg-b { 
-  background-image: url('../assets/cudugnon-cave.png');
+  background-image: url('../assets/cudugnon-cave.jpg');
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
 }
 .package-bg-c { 
-  background-image: url('../assets/secret-beach.png');
+  background-image: url('../assets/secret-beach.jpg');
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;

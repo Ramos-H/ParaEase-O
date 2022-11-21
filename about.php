@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -10,11 +11,12 @@
     <!--Poppins Font-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--Page title Icon-->
-    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/aboutUsDesign.css">
     <!--Form JS-->
     <script src="scripts/forms.js"></script>
+    <title>ParaEase'O | About Us</title>
   </head>
   <body class="body-aboutUs">
     <?php include 'inc/header.php'?>
