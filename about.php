@@ -68,9 +68,9 @@
               <div class="container container-logos-connectWithUs">
                 <img src="assets/Person_logo.png" class="image-responsive" style="width: 60px; height: 50px;" alt="">
                 <p class="p-connectWithUs" style="font-family: Poppins;">
-                  09477947033
-                  Hans Simon Ramos
-                  <b>Contact Person </b>
+                  09477947033<br>
+                  Hans Simon Ramos<br>
+                  <b>Contact Person</b>
                 </p>
               </div>
               <!--Person Div-->
