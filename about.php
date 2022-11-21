@@ -76,37 +76,37 @@
             <!--End of Col-8-->
         </div>
         <div class="col-md-8">
-          <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <!--Fname Lname-->
             <div class="row g-2 form-adjust-connectWithUs" style="gap: 1vw;">
               <div class="col-md">
                 <div class="form-floating">
-                  <input type="text" class="form-control form-adjust-connectWithUs" id="floatingInputGrid" name="name_first" placeholder="First Name" required>
-                  <label for="floatingInputGrid">First Name</label>
+                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_first" name="name_first" placeholder="First Name" required>
+                  <label for="name_first">First Name</label>
                 </div>
               </div>
               <div class="col-md">
                 <div class="form-floating">
-                  <input type="text" class="form-control form-adjust-connectWithUs" id="floatingInputGrid" name="name_last" placeholder="Last Name" required>
-                  <label for="floatingInputGrid">Last Name</label>
+                  <input type="text" class="form-control form-adjust-connectWithUs" id="name_last" name="name_last" placeholder="Last Name" required>
+                  <label for="name_last">Last Name</label>
                 </div>
               </div>
             </div>
             <!--End of Fname Lname-->
             <!--Email-->
             <div class="form-floating">
-              <input type="email" class="form-control form-adjust-connectWithUs" id="floatingInputGrid" name="email" placeholder="name@domain.com" required>
-              <label for="floatingInputGrid">Email Address</label>
+              <input type="email" class="form-control form-adjust-connectWithUs" id="email" name="email" placeholder="Email (Example: name@domain.com)" required>
+              <label for="email">Email Address</label>
             </div>
             <!--Address-->
             <div class="form-floating">
-              <input class="form-control form-adjust-connectWithUs" id="floatingInputGrid" name="subject" placeholder="your topic" required>
-              <label for="floatingInputGrid">Subject</label>
+              <input class="form-control form-adjust-connectWithUs" id="subject" name="subject" placeholder="Subject" required>
+              <label for="subject">Subject</label>
             </div>
             <!--Text Area-->
             <div class="form-floating form-adjust-connectWithUs">
-              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="message" style="height: 100px" required></textarea required>
-              <label for="floatingTextarea2">Message</label>
+              <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px" required></textarea required>
+              <label for="message">Message</label>
             </div>
             <!--Button-->
             <div class="container container-button-connectWithUs" style="margin-top: 3vh;">
