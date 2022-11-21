@@ -10,7 +10,7 @@
     <!--Poppins Font-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--Page title Icon-->
-    <link rel="shortcut icon" href="assets\icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
 
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/main.css">
@@ -27,7 +27,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-          <img class="img-places" src="assets\big-lagoon.png">
+          <img class="img-places" src="assets/big-lagoon.png">
         </div>
         
         <div class="col">
@@ -37,7 +37,7 @@
 
         <div class="row">
           <div class="col text-center order-lg-2">
-            <img class="img-places" src="assets\small-lagoon.png">
+            <img class="img-places" src="assets/small-lagoon.png">
           </div>
 
           <div class="col order-lg-1">
@@ -48,7 +48,7 @@
 
         <div class="row">
           <div class="col text-center">
-          <img class="img-places" src="assets\snake-island.png">
+          <img class="img-places" src="assets/snake-island.png">
         </div>
         
         <div class="col">
@@ -58,7 +58,7 @@
 
         <div class="row">
           <div class="col text-center order-lg-2">
-            <img class="img-places" src="assets\cudugnon-cave.png">
+            <img class="img-places" src="assets/cudugnon-cave.png">
           </div>
 
           <div class="col order-lg-1">
@@ -69,7 +69,7 @@
 
         <div class="row">
           <div class="col text-center">
-          <img class="img-places" src="assets\hidden-beach.png">
+          <img class="img-places" src="assets/hidden-beach.png">
         </div>
         
         <div class="col">
@@ -79,7 +79,7 @@
 
         <div class="row">
           <div class="col text-center order-lg-2">
-            <img class="img-places" src="assets\secret-beach.png">
+            <img class="img-places" src="assets/secret-beach.png">
           </div>
 
           <div class="col order-lg-1">
