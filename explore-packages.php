@@ -110,8 +110,8 @@
                     
                     <!-- Message -->
                     <div class="form-floating mb-3">
-                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
-                      <label for="message">Message</label>
+                      <textarea class="form-control input-sm" name="message" id="message_1" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message_1">Message</label>
                       <div class="invalid-feedback"></div>
                     </div>
 
@@ -162,8 +162,8 @@
                       <!-- First name -->
                       <div class="col">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
-                          <label for="name_first_1">First Name</label>
+                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_2" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                          <label for="name_first_2">First Name</label>
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
@@ -171,8 +171,8 @@
                       <!-- Last name -->
                       <div class="col">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
-                          <label for="name_last_1">Last Name</label>
+                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_2" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                          <label for="name_last_2">Last Name</label>
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
@@ -181,22 +181,22 @@
 
                     <!-- Email -->
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
-                      <label for="email_1">Email</label>
+                      <input type="email" class="form-control input-sm" name="email" id="email_2" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <label for="email_2">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
 
                     <!-- Subject -->
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
-                      <label for="subject_1">Subject</label>
+                      <input type="text" class="form-control input-sm" name="subject" id="subject_2" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                      <label for="subject_2">Subject</label>
                       <div class="invalid-feedback"></div>
                     </div>
                     
                     <!-- Message -->
                     <div class="form-floating mb-3">
-                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
-                      <label for="message">Message</label>
+                      <textarea class="form-control input-sm" name="message" id="message_2" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message_2">Message</label>
                       <div class="invalid-feedback"></div>
                     </div>
 
@@ -247,8 +247,8 @@
                       <!-- First name -->
                       <div class="col">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
-                          <label for="name_first_1">First Name</label>
+                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_3" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                          <label for="name_first_3">First Name</label>
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
@@ -256,8 +256,8 @@
                       <!-- Last name -->
                       <div class="col">
                         <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
-                          <label for="name_last_1">Last Name</label>
+                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_3" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                          <label for="name_last_3">Last Name</label>
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
@@ -266,22 +266,22 @@
 
                     <!-- Email -->
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
-                      <label for="email_1">Email</label>
+                      <input type="email" class="form-control input-sm" name="email" id="email_3" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <label for="email_3">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
 
                     <!-- Subject -->
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
-                      <label for="subject_1">Subject</label>
+                      <input type="text" class="form-control input-sm" name="subject" id="subject_3" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                      <label for="subject_3">Subject</label>
                       <div class="invalid-feedback"></div>
                     </div>
                     
                     <!-- Message -->
                     <div class="form-floating mb-3">
-                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
-                      <label for="message">Message</label>
+                      <textarea class="form-control input-sm" name="message" id="message_3" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message_3">Message</label>
                       <div class="invalid-feedback"></div>
                     </div>
 
