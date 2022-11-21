@@ -71,21 +71,49 @@
                 </div>
 
                 <div class="col-7">
-                  <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
+                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
+                    <!-- First and last name row start -->
                     <div class="row">
+                      <!-- First name -->
                       <div class="col">
-                        <input type="text" name="name_first" placeholder="First Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                          <label for="name_first_1">First Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
-
+                      
+                      <!-- Last name -->
                       <div class="col">
-                        <input type="text" name="name_last" placeholder="Last Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                          <label for="name_last_1">Last Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
                     </div>
+                    <!-- First and last name row end -->
 
-                    <input type="text" name="email" placeholder="Email / Contact Number">
-                    <input type="text" name="subject" placeholder="Subject">
-                    <br>
-                    <textarea placeholder="Message / Concerns / Requests" class="textarea-forms" name="message" id="message"></textarea>
+                    <!-- Email -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <label for="email_1">Email</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                      <label for="subject_1">Subject</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="form-floating mb-3">
+                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message">Message</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
 
                     <div class="container container-bg">
                       <div class="row">
@@ -102,10 +130,9 @@
                       <div class="row">
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
+
+                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="1">Book</button>
                     </div>
-                    <a href="#">
-                      <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="1">Book</button>
-                    </a>
                   </form>
                 </div>
               </div>
@@ -129,21 +156,49 @@
                 </div>
 
                 <div class="col-7">
-                  <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
+                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
+                    <!-- First and last name row start -->
                     <div class="row">
+                      <!-- First name -->
                       <div class="col">
-                        <input type="text" name="name_first" placeholder="First Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                          <label for="name_first_1">First Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
-
+                      
+                      <!-- Last name -->
                       <div class="col">
-                        <input type="text" name="name_last" placeholder="Last Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                          <label for="name_last_1">Last Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
                     </div>
+                    <!-- First and last name row end -->
 
-                    <input type="text" name="email" placeholder="Email / Contact Number">
-                    <input type="text" name="subject" placeholder="Subject">
-                    <br>
-                    <textarea placeholder="Message / Concerns / Requests" class="textarea-forms" name="message" id="message"></textarea>
+                    <!-- Email -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <label for="email_1">Email</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                      <label for="subject_1">Subject</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="form-floating mb-3">
+                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message">Message</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
 
                     <div class="container container-bg">
                       <div class="row">
@@ -160,10 +215,9 @@
                       <div class="row">
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
+
+                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="2">Book</button>
                     </div>
-                    <a href="#">
-                      <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="2">Book</button>
-                    </a>
                   </form>
                 </div>
               </div>
@@ -187,21 +241,49 @@
                 </div>
 
                 <div class="col-7">
-                  <form name="myForm" onsubmit="return validateForm()" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
+                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
+                    <!-- First and last name row start -->
                     <div class="row">
+                      <!-- First name -->
                       <div class="col">
-                        <input type="text" name="name_first" placeholder="First Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                          <label for="name_first_1">First Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
-
+                      
+                      <!-- Last name -->
                       <div class="col">
-                        <input type="text" name="name_last" placeholder="Last Name">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                          <label for="name_last_1">Last Name</label>
+                          <div class="invalid-feedback"></div>
+                        </div>
                       </div>
                     </div>
+                    <!-- First and last name row end -->
 
-                    <input type="text" name="email" placeholder="Email / Contact Number">
-                    <input type="text" name="subject" placeholder="Subject">
-                    <br>
-                    <textarea placeholder="Message / Concerns / Requests" class="textarea-forms" name="message" id="message"></textarea>
+                    <!-- Email -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <label for="email_1">Email</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                      <label for="subject_1">Subject</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="form-floating mb-3">
+                      <textarea class="form-control input-sm" name="message" id="message" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                      <label for="message">Message</label>
+                      <div class="invalid-feedback"></div>
+                    </div>
 
                     <div class="container container-bg">
                       <div class="row">
@@ -218,10 +300,9 @@
                       <div class="row">
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
+
+                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="3">Book</button>
                     </div>
-                    <a href="#">
-                      <button type="submit" class="btn-lg btn select-btn-forms px-3 py-1" style="float: right;" name="submit" value="3">Book</button>
-                    </a>
                   </form>
                 </div>
               </div>
@@ -240,15 +321,6 @@
     <!--Bootstrap JS bundle-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/forms.js"></script>
   </body>
 </html>
-
-<!--  <div class="row">
-<div class="col-6 border">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241609.576289215!2d119.45416559033447!3d11.192972260553368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b65515ef5c9e0f%3A0xfc4e665b599b0455!2sEl%20Nido%2C%20Palawan!5e0!3m2!1sen!2sph!4v1668441207367!5m2!1sen!2sph" width="680" height="680" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<div class="col-6 text-center pt-5">
-<h1 class=""> Welcome to El Nido!</h1>
-<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repellendus est, debitis cumque dicta maiores non minima aspernatur pariatur, maxime quam, ut sit nisi reprehenderit fuga. At veritatis nisi magnam? lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi cupiditate, possimus dicta illo veniam quis unde eos adipisci perspiciatis, et architecto quas eius expedita excepturi porro, officiis accusamus consequuntur consequatur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam necessitatibus sit deleniti aliquid consequuntur suscipit dolore natus nesciunt voluptates, expedita itaque eveniet quia nemo? Distinctio excepturi ratione voluptatem repudiandae?</p>
-</div>
-</div> -->
