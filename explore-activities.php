@@ -10,7 +10,7 @@
     <!--Poppins Font-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--Page title Icon-->
-    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
 
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/main.css">
@@ -27,7 +27,7 @@
     <div class="container">
     <div class="row justify-content-evenly">
     <div class="col text-center">
-        <img class="img-activities" src="assets/scuba-diving.png">
+        <img class="img-activities" src="assets/scuba-diving.jpg">
     </div>
     <div class="col">
         <h4 class="h4-activities text-start">Scuba Diving</h4>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="col text-center">
-      <img class="img-activities" src="assets/freediving.png">
+      <img class="img-activities" src="assets/freediving.jpg">
     </div>
     <div class="col">
       <h4 class="h4-activities text-start">Freediving</h4>
@@ -45,7 +45,7 @@
 
     <div class="row justify-content-evenly">
   <div class="col text-center order-lg-2">
-    <img class="img-activities" src="assets/kayaking.png">
+    <img class="img-activities" src="assets/kayaking.jpg">
   </div>
   <div class="col order-lg-1">
     <h4 class="h4-activities text-lg-end">Kayaking</h4>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="col text-center order-lg-4">
-    <img class="img-activities" src="assets/island-hopping.png">
+    <img class="img-activities" src="assets/island-hopping.jpg">
   </div>
   <div class="col order-lg-3">
     <h4 class="h4-activities text-lg-end">Island Hopping</h4>

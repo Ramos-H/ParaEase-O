@@ -10,7 +10,7 @@
     <!--Poppins Font-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--Page title Icon-->
-    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
     <!--Main CSS-->
     <link rel="stylesheet" href="styles/main.css">
     <title>ParaEase'O</title>

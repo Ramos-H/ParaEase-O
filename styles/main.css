@@ -67,7 +67,7 @@
 
  /********* PLACES **********/
  .body-places{
-  background-image: url(../assets/bg-explore.png);
+  background-image: url(../assets/bg-explore.jpg);
   background-repeat: repeat-y;
   background-size: cover;
 }
@@ -106,7 +106,7 @@
 /*** ACTIVITIES ***/
 
 .body-activities{
-  background-image: url(../assets/bg-explore.png);
+  background-image: url(../assets/bg-explore.jpg);
   background-repeat: repeat-y;
   background-size: cover;
 }
@@ -278,7 +278,7 @@ section{
 }
 
 .map-section{
-  background: url(../assets/bg-explore.png) fixed;
+  background: url(../assets/bg-explore.jpg) fixed;
   
 }
 
