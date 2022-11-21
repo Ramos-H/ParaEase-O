@@ -96,7 +96,7 @@
 
                     <!-- Email -->
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
                       <label for="email_1">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
@@ -181,7 +181,7 @@
 
                     <!-- Email -->
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
                       <label for="email_1">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
@@ -266,7 +266,7 @@
 
                     <!-- Email -->
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                      <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
                       <label for="email_1">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
