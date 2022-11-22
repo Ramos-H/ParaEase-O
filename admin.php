@@ -6,14 +6,14 @@
   <title>Admin Dashboard Test</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <link rel="stylesheet" href="../styles/admin.css">
+  <link rel="stylesheet" href="styles/admin.css">
   <script defer src="../scripts/admin.js"></script>
 </head>
 <body>
-  <?php require_once 'logic_admin.php'; ?>
+  <?php require_once 'php/logic_admin.php'; ?>
   <div class="header">
     <span>ADMIN DASHBOARD</span>
-    <button href="logout.php" class="logout-btn">Logout</button>
+    <button href="php/logout.php" class="logout-btn">Logout</button>
   </div>
 
   <main class="admin-container">
