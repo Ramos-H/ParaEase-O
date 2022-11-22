@@ -24,11 +24,11 @@
     <!--About Us start-->
     <?php require_once 'php/logic_form.php'; ?>
     <div class="container conatiner-aboutUs d-flex">
-      <div class="row row-aboutUS">
-        <div class="col-lg-6 center-image-aboutUs">
+      <div class="row row-aboutUS sm-mt-2">
+        <div class="col-lg-6 col-sm-12 center-image-aboutUs">
           <img src="assets/ParaEaseO_AboutUs_Picture.png" class="image-responsive" alt="">
         </div>
-        <div class="col-lg-6 text-responsive-aboutUs">
+        <div class="col-lg-6 col-sm-12 text-responsive-aboutUs">
           <h3 style="font-family: Feeling Passionate; font-size: 60px; margin-top: 2vw;">About Us </h3> 
           <h4 style="font-family: Poppins; font-size: 30px;"> Project Implementers</h4>
           <p style="margin-top: 2vh; font-size: 20px;">
@@ -72,6 +72,7 @@
               <!--Person Div-->
             <!--End of Col-8-->
         </div>
+        <!-- forms -->
         <div class="col-md-8">
           <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return form_submit(this)">
             <!--Fname Lname-->

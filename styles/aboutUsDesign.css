@@ -27,7 +27,6 @@
   top: 15vh;
   align-items: center; /* y- axis */
   justify-content: center; /* x -axis*/
-  height: 105vh;
 }
 
 .image-responsive{
@@ -126,3 +125,4 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
