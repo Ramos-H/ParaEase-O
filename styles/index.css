@@ -406,7 +406,7 @@ input{
       width: 80%;
   }
   .right-column { 
-      width: 80%;
+      width: 100%;
       height: calc(100%-10px);
       margin-top: 10px;
   }
