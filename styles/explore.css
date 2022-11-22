@@ -12,6 +12,7 @@
 
  .navbar {
      background-color: #F8F3F3;
+     flex-wrap: nowrap;
  }
 
  .active a{
