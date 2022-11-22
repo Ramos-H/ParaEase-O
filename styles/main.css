@@ -316,8 +316,7 @@ section{
 }
 
 .modal-content{
-  width: 800px;
-  height: 600px;
+  width: 80%;
   background-color: #FFFFFF;
   border-color: #8F9657;
   border-style: solid;
@@ -386,6 +385,7 @@ input{
   background-color: #8F9657;
   color: #FFFFFF;
   text-decoration: none;
+  width: 100%;
 }
 
 .close{
@@ -430,4 +430,16 @@ input{
     padding-top: 35px;
   }
 
+}
+
+.book-btn-row { 
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0px;
+}
+.book-btn-row button { 
+  min-height: 40px;
+  max-width: 30%;
 }

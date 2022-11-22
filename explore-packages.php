@@ -76,7 +76,7 @@
                     <!-- First and last name row start -->
                     <div class="row">
                       <!-- First name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_first" id="name_first_1" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
                           <label for="name_first_1">First Name</label>
@@ -85,7 +85,7 @@
                       </div>
                       
                       <!-- Last name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_last" id="name_last_1" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
                           <label for="name_last_1">Last Name</label>
@@ -132,7 +132,10 @@
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
 
-                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="1">Book</button>
+                      <div class="book-btn-row">
+                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="1">Book</button>
+                      </div>
+
                     </div>
                   </form>
                 </div>
@@ -161,7 +164,7 @@
                     <!-- First and last name row start -->
                     <div class="row">
                       <!-- First name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_first" id="name_first_2" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
                           <label for="name_first_2">First Name</label>
@@ -170,7 +173,7 @@
                       </div>
                       
                       <!-- Last name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_last" id="name_last_2" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
                           <label for="name_last_2">Last Name</label>
@@ -217,7 +220,10 @@
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
 
-                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="2">Book</button>
+                      <div class="book-btn-row">
+                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="2">Book</button>
+                      </div>
+                    
                     </div>
                   </form>
                 </div>
@@ -231,6 +237,7 @@
         <div class="bg-modal-3">
           <div class="modal-content">
             <div class="close-3">+</div>
+            <div>
               <h1 class="h1-forms">Ready to Explore?</h1>
               <hr class="hr-forms">
 
@@ -246,7 +253,7 @@
                     <!-- First and last name row start -->
                     <div class="row">
                       <!-- First name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_first" id="name_first_3" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
                           <label for="name_first_3">First Name</label>
@@ -255,7 +262,7 @@
                       </div>
                       
                       <!-- Last name -->
-                      <div class="col">
+                      <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control input-sm" name="name_last" id="name_last_3" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
                           <label for="name_last_3">Last Name</label>
@@ -302,7 +309,10 @@
                         <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
                       </div>
 
-                      <button type="submit" class="btn btn-lg select-btn-forms px-3 py-1" style="float: right;" name="submit" value="3">Book</button>
+                      <div class="book-btn-row">
+                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="3">Book</button>
+                      </div>
+
                     </div>
                   </form>
                 </div>
