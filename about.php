@@ -32,9 +32,8 @@
           <h3 style="font-family: Feeling Passionate; font-size: 60px; margin-top: 2vw;">About Us </h3> 
           <h4 style="font-family: Poppins; font-size: 30px;"> Project Implementers</h4>
           <p style="margin-top: 2vh; font-size: 20px;">
-         We are students of the University of Santo Tomas. We made this 
-         website to showcase the charm of Palawan--one of the tourist hotspots here in the Philippines. Using our skills and knowledge, we would like to contribute in sharing the Filipino lifestyle by
-         showing the beauty of the Philippines' geography, culture, and people
+         We are students of the University of Santo Tomas. We made this website to showcase the charm of Palawan--one of the tourist hotspots here in the Philippines.
+         Using our skills and knowledge, we would like to contribute in sharing the Filipino lifestyle by showing the beauty of the Philippines' geography, culture, and people.
           </p>
         </div>
         <!--About Us end-->
