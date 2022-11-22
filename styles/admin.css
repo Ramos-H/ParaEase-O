@@ -87,7 +87,7 @@ body {
     flex-direction: column;
     padding: 15px;
 }
-#status { 
+.status { 
     position: absolute;
     top: 50%;
     left: -20px;

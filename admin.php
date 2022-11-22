@@ -7,7 +7,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="styles/admin.css">
-  <script defer src="../scripts/admin.js"></script>
+  <script defer src="scripts/admin.js"></script>
 </head>
 <body>
   <?php require_once 'php/logic_admin.php'; ?>
@@ -30,7 +30,7 @@
               <?php $feedbacks = get_all_feedbacks(); ?>
               <?php foreach($feedbacks as $feedback): ?>
                   <div class="feedback-wrapper">
-                    <input type="checkbox" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]" id="status" />
+                    <input type="checkbox" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]" class="status" />
                     
                     <div class="row-0">
                       <p class="<?php echo htmlspecialchars($feedback['resolved'] ? 'green' : 'red') ?>"><?php echo htmlspecialchars($feedback['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></p>
@@ -70,18 +70,30 @@
             <?php if(get_total_table_count(TABLE_PACK_INQ) > 0): ?>
                 <?php $inquiries = get_all_package_inquiries(); ?>
                 <?php foreach($inquiries as $inquiry): ?>
-                  <input type="checkbox" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]">
-                    <?php echo htmlspecialchars($inquiry['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?>
-                    <?php echo htmlspecialchars($inquiry['package_id']) ?>
-                    <?php echo htmlspecialchars($inquiry['name_first']) ?>
-                    <?php echo htmlspecialchars($inquiry['name_last']) ?>
-                    <?php echo htmlspecialchars($inquiry['email']) ?>
-                    <?php echo htmlspecialchars($inquiry['subject']) ?>
-                    <p><?php echo nl2br(htmlspecialchars($inquiry['message'])) ?></p>
-                    <?php echo htmlspecialchars($inquiry['post_time']) ?>
-                    <button type="submit" name="status" value="single_resolve_<?php echo htmlspecialchars($inquiry['id'])?>">Mark as resolved</button>
-                  <button type="submit" name="status" value="single_unresolve_<?php echo htmlspecialchars($inquiry['id'])?>">Mark as unresolved</button>
-                  
+                  <div class="feedback-wrapper">
+                    <input type="checkbox" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]" class="status">
+                    <div class="row-0">
+                      <p class="<?php echo htmlspecialchars($inquiry['resolved'] ? 'green' : 'red')?>"><?php echo htmlspecialchars($inquiry['resolved'] ? 'RESOLVED' : 'UNRESOLVED') ?></p>
+                      <p><?php echo htmlspecialchars($inquiry['post_time']) ?></p>
+                    </div>
+                    <div class="row-1">
+                      <p><strong>First Name: </strong><?php echo htmlspecialchars($inquiry['name_first']) ?></p>
+                      <p><strong>Last Name: </strong><?php echo htmlspecialchars($inquiry['name_last']) ?></p>
+                      <p><strong>Email: </strong><?php echo htmlspecialchars($inquiry['email']) ?></p>
+                    </div>
+                    <div class="row-2">
+                      <p><strong>Package ID: </strong><?php echo htmlspecialchars($inquiry['package_id']) ?></p>
+                      <p><strong>Subject: </strong><?php echo htmlspecialchars($inquiry['subject']) ?></p>
+                    </div>
+                    <div class="row-3">
+                      <strong>Message: </strong>
+                      <p><?php echo nl2br(htmlspecialchars($inquiry['message'])) ?></p>
+                    </div>
+                    <div class="row-4">
+                      <button type="submit" name="status" value="single_resolve_<?php echo htmlspecialchars($inquiry['id'])?>" class="btn-resolve resolution-btn">Mark as resolved</button>
+                      <button type="submit" name="status" value="single_unresolve_<?php echo htmlspecialchars($inquiry['id'])?>" class="btn-unresolve resolution-btn">Mark as unresolved</button>
+                    </div>
+                  </div>
                 <?php endforeach; ?>
             <?php endif; ?>
       

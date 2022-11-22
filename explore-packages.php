@@ -66,7 +66,7 @@
 
               <div class="row">
                 <div class="col-4 text-center">
-                  <h1 class="h1-tour">Tour A</h1>
+                  <h1 class="h1-tour">Tour</h1>
                   <h2 class="h2-tour">₱ 1,200<h2>
                   <h6 class="h6-tour">per pax</h6>
                 </div>
