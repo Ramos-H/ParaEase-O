@@ -80,7 +80,7 @@
     if(!empty($ids)) 
     {
       if(DEBUG_MODE) { print_r($ids); }
-      echo update_resolve_status($table_value, $resolve_value, $ids);
+      update_resolve_status($table_value, $resolve_value, $ids);
     }
   }
 ?>
