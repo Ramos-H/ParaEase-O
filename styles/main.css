@@ -145,7 +145,7 @@
   overflow-x: hidden;
  }
  .masthead-homepage {
-  min-height: 30rem;
+  height: 100vh;
   width: 100%;
   height: auto;
   position: relative;

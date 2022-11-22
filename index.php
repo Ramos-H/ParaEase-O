@@ -20,7 +20,7 @@
   <body class="body-homepage">
     <?php include 'inc/header.php'?>
 
-    <header class="masthead-homepage align-items-center">
+    <header class="masthead-homepage d-flex justify-content-center align-items-center">
       <div class="container px-4 px-lg-5 text-center">
         <h1 class = "h1-homepage">ParaEase'O</h1>
         <p class= "p-homepage">El Nido, Palawan Tourism Portal</p>
