@@ -44,11 +44,7 @@
       echo '<br>';
     }
   
-    if(!$has_username) { 
-      if(isset($_POST['username'])) {
-        $errors['username'] = 'Username cannot be empty';
-      }
-    } // old name req *
+    if(!$has_username) { $errors['username'] = 'Username cannot be empty'; } // old name req *// old name req *
     if(!$has_password) { $errors['password'] = 'Password cannot be empty'; } // old pass req *
 
     if(!$has_new_username) { $errors['new_username'] = 'New Username cannot be empty'; } // new username req *
