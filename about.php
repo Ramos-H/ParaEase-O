@@ -82,7 +82,7 @@
               </div>
             <?php endif; ?>
           <?php endif; ?>
-          <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return form_submit(this)">
+          <form id="form_feedback" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '#form_feedback'; ?>" method="POST" onsubmit="return form_submit(this)">
             <!--Fname Lname-->
             <div class="row g-2 form-adjust-connectWithUs" style="gap: 1vw;">
               <div class="col-md">
