@@ -18,7 +18,7 @@
       <?php require_once 'php/logic_login.php'; ?>
       <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-5">
-          <img src="assets/icon.jpg" class="img-fluid rounded-circle mb-2" alt="ParaEase'O Logo">
+          <img src="assets/icon_big.jpg" class="img-fluid mb-2" alt="ParaEase'O Logo">
           <h3 class="text-center">Log In</h3>
           <form action="" method="POST">
             <div class="form-floating mb-3">
