@@ -98,7 +98,7 @@
                             </div>
                             <!-- Time -->
                             <div class="col-auto">
-                              <span class="time"><?php echo htmlspecialchars($feedback['post_time'])?></span>
+                              <span class="time"><?php echo time_elapsed_string($feedback['post_time'], 2);?></span>
                             </div>
                           </div>
                         </div>
@@ -167,7 +167,7 @@
                             </div>
                             <!-- Time -->
                             <div class="col-auto">
-                              <span class="time"><?php echo htmlspecialchars($inquiry['post_time'])?></span>
+                              <span class="time"><?php echo time_elapsed_string($inquiry['post_time'], 2);?></span>
                             </div>
                           </div>
                         </div>

@@ -43,8 +43,8 @@
       echo sprintf('Confirm password matches: %s<br>', boolToStr($confirm_password_matches));
       echo '<br>';
     }
-
-    if(!$has_username) { $errors['username'] = 'Username cannot be empty'; } // old name req *
+  
+    if(!$has_username) { $errors['username'] = 'Username cannot be empty'; } // old name req *// old name req *
     if(!$has_password) { $errors['password'] = 'Password cannot be empty'; } // old pass req *
 
     if(!$has_new_username) { $errors['new_username'] = 'New Username cannot be empty'; } // new username req *
