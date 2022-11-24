@@ -2,9 +2,7 @@
   require_once 'utils.php';
   require_once 'database.php';
   require_once 'constants.php';
-
-  session_start();
-  // if(!isset($_SESSION['logged_in'])) { header("Location: test_login.php"); }
+  require_once 'admin_start.php';
 
   $errors = array('username' => '', 
                     'password' => '', 

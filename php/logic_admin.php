@@ -2,9 +2,7 @@
   require_once 'database.php';
   require_once 'constants.php';
   require_once 'utils.php';
-
-  session_start();
-  // if(!isset($_SESSION['logged_in'])) { header("Location: php/test_login.php"); }
+  require_once 'admin_start.php';
 
   $table_value  = isset($_POST['table'])  ? strtolower(trim($_POST['table'])) : null;
   $new_status   = isset($_POST['status']) ? strtolower(trim($_POST['status'])) : null;
