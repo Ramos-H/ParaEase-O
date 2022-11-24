@@ -22,7 +22,7 @@
     <main>
       <h1 class="h1-activities text-center">Your go-to activities!</h1>
       <h6 class="h6-activities text-center">FEATURED EL NIDO ACTIVITIES</h6>
-      <div class="container">
+      <div class="container pb-5">
         <div class="row justify-content-evenly">
           <div class="col text-center">
             <img class="img-activities" src="assets/scuba-diving.jpg">

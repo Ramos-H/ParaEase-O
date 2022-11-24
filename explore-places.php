@@ -22,7 +22,7 @@
     <main>
       <h1 class="h1-places"> Your go to places!</h1>
       <h6 class="h6-places">FEATURED EL NIDO TOURIST SPOTS</h6>
-      <div class="container">
+      <div class="container pb-5">
         <div class="row">
           <div class="col text-center">
             <img class="img-places" src="assets/big-lagoon.jpg">
