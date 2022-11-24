@@ -23,7 +23,7 @@
     <!--Main body-->
     <!--About Us start-->
     <?php require_once 'php/logic_form.php'; ?>
-    <div class="container conatiner-aboutUs d-flex">
+    <div class="container conatiner-aboutUs d-flex pb-5">
       <div class="row row-aboutUS sm-mt-2">
         <div class="col-lg-6 col-sm-12 center-image-aboutUs">
           <img src="assets/ParaEaseO_AboutUs_Picture.png" class="image-responsive" alt="">
@@ -74,6 +74,14 @@
         </div>
         <!-- forms -->
         <div class="col-md-8">
+          <?php if($has_submitted): ?>
+            <?php if($submit_value === 'feedback'): ?>
+              <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <?php echo $response; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
           <form id="form_feedback" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return form_submit(this)">
             <!--Fname Lname-->
             <div class="row g-2 form-adjust-connectWithUs" style="gap: 1vw;">

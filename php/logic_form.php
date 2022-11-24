@@ -46,6 +46,8 @@
     echo sprintf('Message too long: %s<br>',    boolToStr($too_long_message));
     echo '<br>';
   }
+  
+  $response = '';
 
   if($has_submitted && $has_name_first && $has_name_last && $has_email && $has_subject && $has_message
       && !($too_long_name_first || $too_long_name_last || $too_long_email || $too_long_subject || $too_long_message))
@@ -54,24 +56,33 @@
     {
       if(!insert_new_feedback($name_first, $name_last, $email, $subject, $message))
       {
-        echo 'Something went wrong with inserting the new feedback<br>';
+        $response = 'Something went wrong with inserting the new feedback';
+      }
+      else
+      {
+        $response = 'Your feedback has been submitted.';
       }
     }
     elseif(is_numeric($submit_value))
     {
       $package_id = intval($submit_value);
 
-      if ($package_id < 1 || $package_id > PACKAGE_COUNT) {
-        echo ("The package ID submitted was out of the range of available packages.<br>");
+      if ($package_id < 1 || $package_id > PACKAGE_COUNT) 
+      {
+        $response = "The package ID submitted was out of the range of available packages.";
       }
       elseif(!insert_new_inquiry(intval($submit_value), $name_first, $name_last, $email, $subject, $message))
       {
-        echo 'Something went wrong with inserting the new inquiry<br>';
+        $response = 'Something went wrong with inserting the new inquiry';
+      }
+      else
+      {
+        $response = 'Your inquiry has been successfully submitted.';
       }
     }
     else
     {
-      echo 'The submit value is invalid<br>';
+      $response = 'The submit value is invalid';
     }
   }
 
