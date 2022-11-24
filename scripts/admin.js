@@ -1,6 +1,31 @@
-function stop_checkbox_bubble(event)
+
+function on_checkbox_click(event)
 {
   event.stopPropagation();
+}
+
+function select_all(table_name)
+{
+  if (table_name === 'feedbacks' || table_name === 'package_inquiries')
+  {
+    var checkboxes = document.getElementById(table_name).getElementsByClassName("selector");
+    for (var index = 0; index < checkboxes.length; index++)
+    {
+      checkboxes[index].checked = true;
+    }
+  }
+}
+
+function select_none(table_name)
+{
+  if (table_name === 'feedbacks' || table_name === 'package_inquiries')
+  {
+    var checkboxes = document.getElementById(table_name).getElementsByClassName("selector");
+    for (var index = 0; index < checkboxes.length; index++)
+    {
+      checkboxes[index].checked = false;
+    }
+  }
 }
 
 function show_entry_full(entry, table_name)
@@ -48,7 +73,6 @@ function show_entry_full(entry, table_name)
   modal_button_unresolve.value = `single_unresolve_${entry_id}`;
   
   var packages = ['A', 'B', 'C'];
-  var base_url = window.location.origin + window.location.pathname;
   
   if (table_name === 'feedbacks')
   {

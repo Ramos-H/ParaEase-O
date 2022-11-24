@@ -56,6 +56,8 @@
             <!-- Buttons -->
             <div class="row flex-shrink-1 pb-2">
               <div class="col">
+                <button type="button" class="btn btn-primary" onclick="select_all('feedbacks')">Select all</button>
+                <button type="button" class="btn btn-secondary" onclick="select_none('feedbacks')">Select none</button>
                 <button type="submit" form="form_feedbacks" name="status" value="multiple_resolve" class="btn btn-primary">Mark as resolved</button>
                 <button type="submit" form="form_feedbacks" name="status" value="multiple_unresolve" class="btn btn-secondary">Mark as unresolved</button>
               </div>
@@ -80,7 +82,7 @@
                       <div class="row px-2 d-flex align-items-center">
                         <!-- Checkbox -->
                         <div class="col-auto">
-                          <input type="checkbox" form="form_feedbacks" class="selector" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]" onclick="stop_checkbox_bubble(event)">
+                          <input type="checkbox" form="form_feedbacks" class="selector" name="statuses[<?php echo htmlspecialchars($feedback['id'])?>]" onclick="on_checkbox_click(event)">
                         </div>
                         <div class="col">
                           <div class="row">
@@ -123,6 +125,8 @@
             <!-- Buttons -->
             <div class="row flex-shrink-1 pb-2">
               <div class="col">
+                <button type="button" class="btn btn-primary" onclick="select_all('package_inquiries')">Select all</button>
+                <button type="button" class="btn btn-secondary" onclick="select_none('package_inquiries')">Select none</button>
                 <button type="submit" form="form_package_inquiries" name="status" value="multiple_resolve" class="btn btn-primary">Mark as resolved</button>
                 <button type="submit" form="form_package_inquiries" name="status" value="multiple_unresolve" class="btn btn-secondary">Mark as unresolved</button>
               </div>
@@ -147,7 +151,7 @@
                       <div class="row px-2 d-flex align-items-center">
                         <!-- Checkbox -->
                         <div class="col-auto">
-                          <input type="checkbox" form="form_package_inquiries" class="selector" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]" onclick="stop_checkbox_bubble(event)">
+                          <input type="checkbox" form="form_package_inquiries" class="selector" name="statuses[<?php echo htmlspecialchars($inquiry['id'])?>]" onclick="on_checkbox_click(event)">
                         </div>
                         <div class="col">
                           <div class="row">
