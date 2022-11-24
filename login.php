@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="scripts/forms.js"></script>
   </head>
 
   <body>
@@ -20,13 +22,13 @@
           <h3 class="text-center">Log In</h3>
           <form action="" method="POST">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+              <input type="text" class="form-control" name="username" id="username" placeholder="Username" onchange="check_field_empty(this, 'username')">
               <label for="username">Username</label>
               <div class="invalid-feedback"></div>
             </div>
             
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" onchange="check_field_empty(this, 'password')">
               <label for="password">Password</label>
               <div class="invalid-feedback"></div>
             </div>

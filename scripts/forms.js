@@ -34,6 +34,24 @@ function check_text_area_validity(text_area, property_name)
   check_input_field_validity(text_area, property_name, MAX_MESSAGE_CHARS);
 }
 
+function check_field_empty(field, property_name)
+{
+  if (field !== null)
+  {
+    var value_length = field.value.trim().length;
+    var error_container = field.parentElement.getElementsByClassName("invalid-feedback")[0];
+    if (value_length < 1)
+    {
+      error_container.innerText = `Please enter your ${property_name}.`;
+      field.classList.add("is-invalid");
+    }
+    else
+    {
+      field.classList.remove("is-invalid");
+    }
+  }
+}
+
 
 function form_submit(form)
 {
