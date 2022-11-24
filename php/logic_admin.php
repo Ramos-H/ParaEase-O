@@ -20,6 +20,8 @@
                     || str_starts_with($new_status, 'multiple_resolve')
                     || str_starts_with($new_status, 'multiple_unresolve');
 
+  $affected_entries = -1;
+
   if(DEBUG_MODE)
   {
     echo sprintf('Table value: %s<br>', $has_table_value ? $table_value : 'Nothing');
@@ -46,7 +48,7 @@
     {
       if(!$has_selected_ids)
       {
-        echo 'No entries were selected so nothing was changed.';
+        $affected_entries = 0;
       }
       else
       {
@@ -80,7 +82,7 @@
     if(!empty($ids)) 
     {
       if(DEBUG_MODE) { print_r($ids); }
-      update_resolve_status($table_value, $resolve_value, $ids);
+      $affected_entries = update_resolve_status($table_value, $resolve_value, $ids);
     }
   }
 ?>

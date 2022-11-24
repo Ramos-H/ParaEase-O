@@ -19,14 +19,14 @@
         require_once 'php/logic_admin.php';
         require_once 'php/logic_change_creds.php';
         require_once 'php/utils.php';
-        $tab = isset($_GET['tab']) ? trim($_GET['tab']) : null;
+        $tab = isset($_GET['tab']) ? trim($_GET['tab']) : 'feedbacks';
         $has_tab = !check_str_empty($tab);
       ?>
     
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link <?php if(!$has_tab || $has_tab && ($tab === 'feedbacks')) { echo 'active'; } ?>" id="feedbacks-tab" data-bs-toggle="tab" data-bs-target="#feedbacks" type="button" role="tab" aria-controls="feedbacks" aria-selected="true">Feedbacks</button>
+          <button class="nav-link <?php if($has_tab && ($tab === 'feedbacks')) { echo 'active'; } ?>" id="feedbacks-tab" data-bs-toggle="tab" data-bs-target="#feedbacks" type="button" role="tab" aria-controls="feedbacks" aria-selected="true">Feedbacks</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link <?php if($has_tab && ($tab === 'package_inquiries')) { echo 'active'; } ?>" id="package_inquiries-tab" data-bs-toggle="tab" data-bs-target="#package_inquiries" type="button" role="tab" aria-controls="package_inquiries" aria-selected="false">Package Inquiries</button>
@@ -47,8 +47,8 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <!-- feedbacks tab -->
-        <div class="tab-pane <?php if(!$has_tab || $has_tab && ($tab === 'feedbacks')) { echo 'active'; } ?>" id="feedbacks" role="tabpanel" aria-labelledby="feedbacks-tab">
-          <div class="container d-flex vh-100 flex-column py-3">
+        <div class="tab-pane <?php if($has_tab && ($tab === 'feedbacks')) { echo 'active'; } ?>" id="feedbacks" role="tabpanel" aria-labelledby="feedbacks-tab">
+          <div class="container-fluid d-flex vh-100 flex-column py-3">
             <!-- Table indicator -->
             <input type="hidden" form="form_feedbacks" name="table" value="feedbacks">
             
@@ -60,6 +60,14 @@
               </div>
             </div>
     
+            <!-- Operation response -->
+            <?php if($affected_entries > -1 && $has_tab && ($tab === 'feedbacks')): ?>
+              <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <?php echo sprintf('%d %s been modified.', $affected_entries, $affected_entries < 2 ? 'entry has' : 'entries have'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <?php endif; ?>
+
             <!-- Entry list -->
             <div class="row flex-grow-1 overflow-auto">
               <div class="col">
@@ -107,7 +115,7 @@
         
         <!-- package inquiries tab -->
         <div class="tab-pane <?php if($has_tab && ($tab === 'package_inquiries')) { echo 'active'; } ?>" id="package_inquiries" role="tabpanel" aria-labelledby="package_inquiries-tab">
-          <div class="container d-flex vh-100 flex-column py-3">
+          <div class="container-fluid d-flex vh-100 flex-column py-3">
             <!-- Table indicator -->
             <input type="hidden" form="form_package_inquiries" name="table" value="package_inquiries">
             
@@ -118,7 +126,15 @@
                 <button type="submit" form="form_package_inquiries" name="status" value="multiple_unresolve" class="btn btn-secondary">Mark as unresolved</button>
               </div>
             </div>
-    
+
+            <!-- Operation response -->
+            <?php if($affected_entries > -1 && $has_tab && ($tab === 'package_inquiries')): ?>
+              <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <?php echo sprintf('%d %s been modified.', $affected_entries, $affected_entries < 2 ? 'entry has' : 'entries have'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <?php endif; ?>
+
             <!-- Entry list -->
             <div class="row flex-grow-1 overflow-auto">
               <div class="col">
