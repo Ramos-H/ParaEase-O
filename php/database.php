@@ -33,7 +33,12 @@
     $sql = 'SELECT `package_id` FROM `package_inquiries` GROUP BY `package_id` ORDER BY COUNT(`package_id`) DESC LIMIT 1';
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
-    return $preppedStmt->execute() ? $preppedStmt->fetch() : false;
+    if(!$preppedStmt->execute()) { return false; } 
+    $result = $preppedStmt->get_result();
+    if(empty($result)) { return false; }
+    $array = $result->fetch_all();
+    if(empty($array)) { return 0; }
+    return $array[0][0];
   }
 
   function get_total_table_count($table_name)

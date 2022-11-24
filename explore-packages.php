@@ -20,6 +20,7 @@
   <body class="body-packages">
     <?php include 'inc/header.php'?>
     <?php require_once 'php/logic_form.php'; ?>
+
     <header class="masthead-packages">
       <div class="container-fluid text-center d-flex justify-content-center">
         <div class="row justify-content-center ">
@@ -31,6 +32,9 @@
               <a href="#">
                 <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button">SELECT PACKAGE</button>
               </a>
+              <?php if($most_popular_package === 1): ?>
+                <p>Most popular!</p>
+              <?php endif; ?>
             </div>
           </div>
 
@@ -42,6 +46,9 @@
               <a href="#">
                 <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button-2">SELECT PACKAGE</button>
               </a>
+              <?php if($most_popular_package === 2): ?>
+                <p>Most popular!</p>
+              <?php endif; ?>
             </div>
           </div>
 
@@ -51,8 +58,11 @@
               <h1>₱ 1,400</h1>
               <p>per pax</p>
               <a href="#">
-              <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button-3">SELECT PACKAGE</button>
+                <button type="button" class="btn-lg btn select-btn px-3 py-1" id="button-3">SELECT PACKAGE</button>
               </a>
+              <?php if($most_popular_package === 3): ?>
+                <p>Most popular!</p>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -155,7 +165,7 @@
               <div class="row">
                 <div class="col-4 text-center">
                   <h1 class="h1-tour">Tour B</h1>
-                  <h2 class="h2-tour">₱ 1,200<h2>
+                  <h2 class="h2-tour">₱ 1,300<h2>
                   <h6 class="h6-tour">per pax</h6>
                 </div>
 
@@ -244,7 +254,7 @@
               <div class="row">
                 <div class="col-4 text-center">
                   <h1 class="h1-tour">Tour C</h1>
-                  <h2 class="h2-tour">₱ 1,200<h2>
+                  <h2 class="h2-tour">₱ 1,400<h2>
                   <h6 class="h6-tour">per pax</h6>
                 </div>
 
