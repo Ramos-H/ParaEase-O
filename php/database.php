@@ -212,6 +212,8 @@
     $preppedStmt = $conn->prepare($sql);
     if(!$preppedStmt) { return false; }
 
+    $hashed_password = $has_new_password ? password_hash($new_password, PASSWORD_DEFAULT) : '';
+
     $param_bind_success = false;
     if($has_new_username && !$has_new_password)
     {
@@ -219,11 +221,11 @@
     }
     elseif (!$has_new_username && $has_new_password) 
     {
-      $param_bind_success = $preppedStmt->bind_param('s', $new_password);
+      $param_bind_success = $preppedStmt->bind_param('s', $hashed_password);
     }
     elseif ($has_new_username && $has_new_password) 
     {
-      $param_bind_success = $preppedStmt->bind_param('ss', $new_username, $new_password);
+      $param_bind_success = $preppedStmt->bind_param('ss', $new_username, $hashed_password);
     }
 
     if(!$param_bind_success) { return false; }

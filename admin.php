@@ -21,6 +21,7 @@
       <main>
         <?php
       require_once 'php/logic_admin.php';
+      require_once 'php/logic_change_creds.php';
       require_once 'php/utils.php';
       $tab = isset($_GET['tab']) ? trim($_GET['tab']) : null;
       $has_tab = !check_str_empty($tab);
@@ -34,21 +35,24 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link <?php if($has_tab && ($tab === 'package_inquiries')) { echo 'active'; } ?>" id="package_inquiries-tab" data-bs-toggle="tab" data-bs-target="#package_inquiries" type="button" role="tab" aria-controls="package_inquiries" aria-selected="false">Package Inquiries</button>
       </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link <?php if($has_tab && ($tab === 'change_credentials')) { echo 'active'; } ?>" id="change_credentials-tab" data-bs-toggle="tab" data-bs-target="#change_credentials" type="button" role="tab" aria-controls="change_credentials" aria-selected="false">Change Credentials</button>
+      </li>
       
       <div class="d-flex flex-row-reverse align-items-center justify-content-end ms-auto">
         <a class="btn btn-primary" href="php/logout.php">Log out</a>
-        <a class="btn me-1 btn-secondary" href="php/test_change_creds.php">Change credentials</a>
       </div>
     </ul>
     
     <form method="POST" id="form_feedbacks" action="<?php echo sprintf('%s?tab=%s', htmlspecialchars($_SERVER['PHP_SELF']), 'feedbacks'); ?>"></form>
     <form method="POST" id="form_package_inquiries" action="<?php echo sprintf('%s?tab=%s', htmlspecialchars($_SERVER['PHP_SELF']), 'package_inquiries'); ?>"></form>
+    <form method="POST" id="form_change_credentials" action="<?php echo sprintf('%s?tab=%s', htmlspecialchars($_SERVER['PHP_SELF']), 'change_credentials'); ?>"></form>
 
     <!-- Tab panes -->
     <div class="tab-content">
       <!-- feedbacks tab -->
       <div class="tab-pane <?php if(!$has_tab || $has_tab && ($tab === 'feedbacks')) { echo 'active'; } ?>" id="feedbacks" role="tabpanel" aria-labelledby="feedbacks-tab">
-        <div class="container-fluid d-flex vh-100 flex-column py-3">
+        <div class="container d-flex vh-100 flex-column py-3">
             <!-- Table indicator -->
             <input type="hidden" form="form_feedbacks" name="table" value="feedbacks">
             <!-- Buttons -->
@@ -106,7 +110,7 @@
       
       <!-- package inquiries tab -->
       <div class="tab-pane <?php if($has_tab && ($tab === 'package_inquiries')) { echo 'active'; } ?>" id="package_inquiries" role="tabpanel" aria-labelledby="package_inquiries-tab">
-        <div class="container-fluid d-flex vh-100 flex-column py-3">
+        <div class="container d-flex vh-100 flex-column py-3">
             <!-- Table indicator -->
             <input type="hidden" form="form_package_inquiries" name="table" value="package_inquiries">
             <!-- Buttons -->
@@ -160,6 +164,56 @@
                 <?php endif; ?>
               </div>
             </div>
+        </div>
+      </div>
+
+      <!-- Change credentials tab -->
+      <div class="tab-pane <?php if($has_tab && ($tab === 'change_credentials')) { echo 'active'; } ?>" id="change_credentials" role="tabpanel" aria-labelledby="change_credentials-tab">
+        <div class="container mt-2">
+          <h3>Current Credentials</h3>
+          <p>For security purposes, you must enter the current credentials. </p>
+          <!-- Username -->
+          <div class="form-floating col-md-5 mb-3">
+            <input type="text" class="form-control <?php if(isset($_POST['submit']) && !$has_username) { echo 'is-invalid'; } ?>" form="form_change_credentials" name="username" id="username" placeholder="Username">
+            <label for="username">Username</label>
+            <div class="invalid-feedback"><?php if(!check_str_empty($errors['username'])) { echo htmlspecialchars($errors['username']); } ?></div>
+          </div>
+          <!-- Password -->
+          <div class="form-floating col-md-5 mb-3">
+            <input type="password" class="form-control <?php if(isset($_POST['submit']) && !$has_password) { echo 'is-invalid'; } ?>" form="form_change_credentials" name="password" id="password" placeholder="Password">
+            <label for="password">Password</label>
+            <div class="invalid-feedback"><?php if(!check_str_empty($errors['password'])) { echo htmlspecialchars($errors['password']); } ?></div>
+          </div>
+          
+          <h3>New Credentials</h3>
+          <p>For credentials you don't want to change, enter their current values again.</p>
+          <!-- New Username -->
+          <div class="form-floating col-md-5 mb-3">
+            <input type="text" class="form-control <?php if(isset($_POST['submit']) && !$has_new_username || $new_username_too_long) { echo 'is-invalid'; } ?>" form="form_change_credentials" name="new_username" id="new_username" placeholder="New Username">
+            <label for="new_username">New Username</label>
+            <div class="invalid-feedback"><?php if(!check_str_empty($errors['new_username'])) { echo htmlspecialchars($errors['new_username']); } ?></div>
+          </div>
+          <!-- New Password -->
+          <div class="form-floating col-md-5 mb-3">
+            <input type="password" class="form-control <?php if(isset($_POST['submit']) && !$has_new_password || $new_password_too_short) { echo 'is-invalid'; } ?>" form="form_change_credentials" name="new_password" id="new_password" placeholder="New Password">
+            <label for="new_password">New Password</label>
+            <div class="invalid-feedback"><?php if(!check_str_empty($errors['new_password'])) { echo htmlspecialchars($errors['new_password']); } ?></div>
+          </div>
+          <!-- Confirm Password -->
+          <div class="form-floating col-md-5 mb-3">
+            <?php
+            $invalid_confirm_password = false;
+            if(isset($_POST['submit']) && $has_new_password)
+            {
+              $invalid_confirm_password = ($has_confirm_password) ? !$confirm_password_matches : true;
+            }
+            ?>
+            <input type="password" class="form-control <?php if($invalid_confirm_password) { echo 'is-invalid'; } ?>" form="form_change_credentials" name="confirm_password" id="confirm_password" placeholder="Confirm New Password">
+            <label for="confirm_password">Confirm New Password</label>
+            <div class="invalid-feedback"><?php if(!check_str_empty($errors['confirm_password'])) { echo htmlspecialchars($errors['confirm_password']); } ?></div>
+          </div>
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary" form="form_change_credentials" name="submit" value="change_creds">Change</button>
         </div>
       </div>
     </div>

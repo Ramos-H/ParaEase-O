@@ -4,10 +4,10 @@
   require_once 'utils.php';
 
   session_start();
-  if(!isset($_SESSION['logged_in'])) { header("Location: php/test_login.php"); }
+  // if(!isset($_SESSION['logged_in'])) { header("Location: php/test_login.php"); }
 
-  $table_value  = isset($_POST['table'])  ? strtolower(trim(htmlspecialchars($_POST['table']))) : null;
-  $new_status   = isset($_POST['status']) ? strtolower(trim(htmlspecialchars($_POST['status']))) : null;
+  $table_value  = isset($_POST['table'])  ? strtolower(trim($_POST['table'])) : null;
+  $new_status   = isset($_POST['status']) ? strtolower(trim($_POST['status'])) : null;
   $selected_ids = $_POST['statuses'] ?? null;
 
   $has_table_value  = !check_str_empty($table_value);
