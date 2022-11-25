@@ -11,6 +11,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
     <script src="scripts/forms.js"></script>
   </head>
 
