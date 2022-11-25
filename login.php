@@ -21,7 +21,7 @@
         <div class="card p-5">
           <img src="assets/icon_big.jpg" class="img-fluid mb-2" alt="ParaEase'O Logo">
           <h3 class="text-center">Log In</h3>
-          <form action="" method="POST">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" name="username" id="username" placeholder="Username" onchange="check_field_empty(this, 'username')">
               <label for="username">Username</label>
