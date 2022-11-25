@@ -78,12 +78,12 @@
       else
       {
         $response = 'Your inquiry has been successfully submitted.';
+        header('Location: index.php');
       }
     }
     else
     {
       $response = 'The submit value is invalid';
-      header('Location: index.php');
     }
   }
 
