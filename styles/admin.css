@@ -1,0 +1,51 @@
+* { 
+    --primary: #8F9657;
+    --primary-dark: #395323;
+    --secondary: #606C5F;
+    --secondary-dark: #2B3533;
+}
+
+body {
+    background-color: #e4e6d0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logout-btn { 
+    background-color: var(--primary);
+    padding: 10px;
+    min-width: 100px;
+    border: none;
+    border-radius: 10px;
+    color: white;   
+}
+.logout-btn:hover { 
+    background-color: var(--primary-dark);
+}
+
+.admin-btn { 
+    background-color: var(--primary);
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+.admin-btn:hover {
+    background-color: var(--primary-dark);
+}
+.secondary-admin-btn { 
+    background-color: var(--secondary);
+}
+.secondary-admin-btn:hover { 
+    background-color: var(--secondary-dark);
+}
+
+.nav-link { 
+    color: var(--primary);
+}
+.nav-link:hover  {
+    color: var(--primary-dark);
+}
+
+
+
