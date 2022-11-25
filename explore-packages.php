@@ -76,7 +76,7 @@
 
               <div class="row">
                 <div class="col-4 text-center">
-                  <h1 class="h1-tour">Tour</h1>
+                  <h1 class="h1-tour">Tour A</h1>
                   <h2 class="h2-tour">₱ 1,200<h2>
                   <h6 class="h6-tour">per pax</h6>
                 </div>
@@ -126,26 +126,8 @@
                       <div class="invalid-feedback"></div>
                     </div>
 
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
-                      <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="1">Book</button>
-                      </div>
-
+                    <div class="book-btn-row">
+                      <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="1">Book</button>
                     </div>
                   </form>
                 </div>
@@ -214,26 +196,8 @@
                       <div class="invalid-feedback"></div>
                     </div>
 
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
-                      <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="2">Book</button>
-                      </div>
-                    
+                    <div class="book-btn-row">
+                      <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="2">Book</button>
                     </div>
                   </form>
                 </div>
@@ -303,26 +267,8 @@
                       <div class="invalid-feedback"></div>
                     </div>
 
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
-                      <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="3">Book</button>
-                      </div>
-
+                    <div class="book-btn-row">
+                      <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="3">Book</button>
                     </div>
                   </form>
                 </div>
