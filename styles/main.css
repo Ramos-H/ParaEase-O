@@ -578,3 +578,16 @@ input{
       background-color: white;
   }
 }
+
+.response {
+  background-color: red;
+}
+
+.response {
+  margin-top: 5%;
+}
+
+.response h2 {
+  font-family: "Feeling Passionate",sans-serif;
+  color: #606C5F;
+}
