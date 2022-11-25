@@ -70,19 +70,18 @@
         <!--- Package A Modal Start -->
         <div class="bg-modal">
           <div class="modal-content">
-            <div class="close">+</div>
+            <div class="modal-main">
+              <div class="close">+</div>
               <h1 class="h1-forms">Ready to Explore?</h1>
               <hr class="hr-forms">
-
               <div class="row">
                 <div class="col-4 text-center">
-                  <h1 class="h1-tour">Tour</h1>
+                  <h1 class="h1-tour">Tour A</h1>
                   <h2 class="h2-tour">₱ 1,200<h2>
                   <h6 class="h6-tour">per pax</h6>
                 </div>
-
                 <div class="col-7">
-                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
+                  <form name="package_A" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" novalidate>
                     <!-- First and last name row start -->
                     <div class="row">
                       <!-- First name -->
@@ -93,7 +92,7 @@
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
-                      
+              
                       <!-- Last name -->
                       <div class="col-12 col-sm-6">
                         <div class="form-floating mb-3">
@@ -104,50 +103,40 @@
                       </div>
                     </div>
                     <!-- First and last name row end -->
-
                     <!-- Email -->
                     <div class="form-floating mb-3">
                       <input type="email" class="form-control input-sm" name="email" id="email_1" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
                       <label for="email_1">Email</label>
                       <div class="invalid-feedback"></div>
                     </div>
-
                     <!-- Subject -->
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control input-sm" name="subject" id="subject_1" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
                       <label for="subject_1">Subject</label>
                       <div class="invalid-feedback"></div>
                     </div>
-                    
+              
                     <!-- Message -->
                     <div class="form-floating mb-3">
                       <textarea class="form-control input-sm" name="message" id="message_1" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
                       <label for="message_1">Message</label>
                       <div class="invalid-feedback"></div>
                     </div>
-
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
-                      <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="1">Book</button>
-                      </div>
-
+                    <input type="hidden" name="submit" value="1">
+                    <div class="book-btn-row">
+                      <button type="button" class="btn btn-lg select-btn-forms" onclick="package_book_submit(1)">Book</button>
                     </div>
                   </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="response" style="display: none;">
+              <div class="row">
+                <div class="col">
+                  <h2>Booked Successfully!</h2>
+                  <p class="mb-5">See you in El Nido!</p>
+                  <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>
             </div>
@@ -158,84 +147,73 @@
         <!--- Package B Modal Start -->
         <div class="bg-modal-2">
           <div class="modal-content">
-            <div class="close-2">+</div>
-              <h1 class="h1-forms">Ready to Explore?</h1>
-              <hr class="hr-forms">
-
-              <div class="row">
-                <div class="col-4 text-center">
-                  <h1 class="h1-tour">Tour B</h1>
-                  <h2 class="h2-tour">₱ 1,300<h2>
-                  <h6 class="h6-tour">per pax</h6>
-                </div>
-
-                <div class="col-7">
-                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
-                    <!-- First and last name row start -->
-                    <div class="row">
-                      <!-- First name -->
-                      <div class="col-12 col-sm-6">
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_first" id="name_first_2" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
-                          <label for="name_first_2">First Name</label>
-                          <div class="invalid-feedback"></div>
+            <div class="modal-main">
+              <div class="close-2">+</div>
+                <h1 class="h1-forms">Ready to Explore?</h1>
+                <hr class="hr-forms">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <h1 class="h1-tour">Tour B</h1>
+                    <h2 class="h2-tour">₱ 1,300<h2>
+                    <h6 class="h6-tour">per pax</h6>
+                  </div>
+                  <div class="col-7">
+                    <form name="package_B" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" novalidate>
+                      <!-- First and last name row start -->
+                      <div class="row">
+                        <!-- First name -->
+                        <div class="col-12 col-sm-6">
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control input-sm" name="name_first" id="name_first_2" placeholder="First Name" onchange="check_field_validity(this, 'first name')" required>
+                            <label for="name_first_2">First Name</label>
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+              
+                        <!-- Last name -->
+                        <div class="col-12 col-sm-6">
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control input-sm" name="name_last" id="name_last_2" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
+                            <label for="name_last_2">Last Name</label>
+                            <div class="invalid-feedback"></div>
+                          </div>
                         </div>
                       </div>
-                      
-                      <!-- Last name -->
-                      <div class="col-12 col-sm-6">
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control input-sm" name="name_last" id="name_last_2" placeholder="Last Name" onchange="check_field_validity(this, 'last name')" required>
-                          <label for="name_last_2">Last Name</label>
-                          <div class="invalid-feedback"></div>
-                        </div>
+                      <!-- First and last name row end -->
+                      <!-- Email -->
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control input-sm" name="email" id="email_2" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
+                        <label for="email_2">Email</label>
+                        <div class="invalid-feedback"></div>
                       </div>
-                    </div>
-                    <!-- First and last name row end -->
-
-                    <!-- Email -->
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control input-sm" name="email" id="email_2" placeholder="Email" onchange="check_field_validity(this, 'email')" required>
-                      <label for="email_2">Email</label>
-                      <div class="invalid-feedback"></div>
-                    </div>
-
-                    <!-- Subject -->
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control input-sm" name="subject" id="subject_2" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
-                      <label for="subject_2">Subject</label>
-                      <div class="invalid-feedback"></div>
-                    </div>
-                    
-                    <!-- Message -->
-                    <div class="form-floating mb-3">
-                      <textarea class="form-control input-sm" name="message" id="message_2" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
-                      <label for="message_2">Message</label>
-                      <div class="invalid-feedback"></div>
-                    </div>
-
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+                      <!-- Subject -->
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control input-sm" name="subject" id="subject_2" placeholder="Subject" onchange="check_field_validity(this, 'subject')" required>
+                        <label for="subject_2">Subject</label>
+                        <div class="invalid-feedback"></div>
                       </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
+              
+                      <!-- Message -->
+                      <div class="form-floating mb-3">
+                        <textarea class="form-control input-sm" name="message" id="message_2" placeholder="Message / Concerns / Requests" onchange="check_text_area_validity(this, 'message')" required></textarea>
+                        <label for="message_2">Message</label>
+                        <div class="invalid-feedback"></div>
                       </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
+                      <input type="hidden" name="submit" value="2">
                       <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="2">Book</button>
+                        <button type="button" class="btn btn-lg select-btn-forms" onclick="package_book_submit(2)">Book</button>
                       </div>
-                    
-                    </div>
-                  </form>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+            <div class="response" style="display: none;">
+              <div class="row">
+                <div class="col">
+                  <h2>Booked Successfully!</h2>
+                  <p class="mb-5">See you in El Nido!</p>
+                  <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>
             </div>
@@ -246,8 +224,8 @@
         <!--- Package C Modal Start -->
         <div class="bg-modal-3">
           <div class="modal-content">
-            <div class="close-3">+</div>
-            <div>
+            <div class="modal-main">
+              <div class="close-3">+</div>
               <h1 class="h1-forms">Ready to Explore?</h1>
               <hr class="hr-forms">
 
@@ -259,7 +237,7 @@
                 </div>
 
                 <div class="col-7">
-                  <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return form_submit(this)">
+                  <form name="package_C" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" novalidate>
                     <!-- First and last name row start -->
                     <div class="row">
                       <!-- First name -->
@@ -303,28 +281,21 @@
                       <div class="invalid-feedback"></div>
                     </div>
 
-                    <div class="container container-bg">
-                      <div class="row">
-                        <p class="p-forms text-start">BREAKDOWN OF EXPENSES</p>
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-start">Package Inclusions </p></div>
-                        <div class="col"><p class="p-forms text-end">PHP 600.00</p></div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col"><p class="p-forms text-end">Total: PHP 1200.00</p></div>
-                      </div>
-
-                      <div class="book-btn-row">
-                        <button type="submit" class="btn btn-lg select-btn-forms" name="submit" value="3">Book</button>
-                      </div>
-
+                    <input type="hidden" name="submit" value="3">
+                    <div class="book-btn-row">
+                      <button type="button" class="btn btn-lg select-btn-forms" onclick="package_book_submit(3)">Book</button>
                     </div>
                   </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="response" style="display: none;">
+              <div class="row">
+                <div class="col">
+                  <h2>Booked Successfully!</h2>
+                  <p class="mb-5">See you in El Nido!</p>
+                  <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>
             </div>

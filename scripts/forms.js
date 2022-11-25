@@ -84,8 +84,80 @@ function form_submit(form)
   if (bad_form)
   {
     alert("Please accomplish the form properly before submitting.");
+    for (let index = 0; index < fields.length; index++)
+    {
+      const field = fields[index];
+      field.onchange();
+    }
     return false;
   }
 
   return true;
+}
+
+function package_book_submit(package_num)
+{
+  var modal = null;
+  var form = null;
+  if (package_num == 1)
+  {
+    modal = document.getElementsByClassName('bg-modal')[0];
+    form = document.forms['package_A'];
+  }
+  else if (package_num == 2)
+  {
+    modal = document.getElementsByClassName('bg-modal-2')[0];
+    form = document.forms['package_B'];
+  }
+  else if (package_num == 3)
+  {
+    modal = document.getElementsByClassName('bg-modal-3')[0];
+    form = document.forms['package_C'];
+  }
+
+  var response_panel = modal.getElementsByClassName("response")[0];
+  var content_panel = modal.getElementsByClassName("modal-main")[0];
+  var fields = form.getElementsByClassName("form-control");
+
+  var bad_form = false;
+  for (let index = 0; index < fields.length; index++)
+  {
+    const field = fields[index];
+    var value_length = field.value.trim().length;
+    if (value_length > 0)
+    {
+      var attribute_name = field.getAttribute("name");
+      if (attribute_name !== 'message')
+      {
+        if (value_length > MAX_FIELD_CHARS) { bad_form = true; break; }
+      }
+      else
+      {
+        if (value_length > MAX_MESSAGE_CHARS) { bad_form = true; break; }
+      }
+    }
+    else
+    {
+      bad_form = true;
+      break;
+    }
+  }
+
+  if (bad_form)
+  {
+    alert("Please accomplish the form properly before submitting.");
+    for (let index = 0; index < fields.length; index++)
+    {
+      const field = fields[index];
+      field.onchange();
+    }
+  }
+  else
+  {
+    content_panel.style.display = 'none';
+    response_panel.style.display = 'block';
+    setTimeout(function () {
+      form.requestSubmit();
+    }, 3000);
+  }
 }
