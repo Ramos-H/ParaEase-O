@@ -83,6 +83,7 @@
     else
     {
       $response = 'The submit value is invalid';
+      header('Location: index.php');
     }
   }
 

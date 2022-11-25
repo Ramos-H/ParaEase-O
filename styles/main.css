@@ -431,6 +431,9 @@ input{
     padding-top: 35px;
   }
 
+  .response {
+    background-color: red;
+  }
 }
 
 .book-btn-row { 
@@ -443,4 +446,13 @@ input{
 .book-btn-row button { 
   min-height: 40px;
   max-width: 30%;
+}
+
+.response {
+  margin-top: 5%;
+}
+
+.response h2 {
+  font-family: "Feeling Passionate",sans-serif;
+  color: #606C5F;
 }
