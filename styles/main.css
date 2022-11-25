@@ -444,3 +444,134 @@ input{
   min-height: 40px;
   max-width: 30%;
 }
+
+.sticky-section { 
+  --title: 60px;
+  --content: 30px;
+
+  --margin-a: 90px;
+  --margin-b: 210px;
+  --margin-c: 330px
+}
+
+.sticky-container { 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.left-column { 
+  width: 30%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+
+.left-column-package-a { 
+  background-color: white;
+}
+
+.right-column { 
+  width: 70%;
+  height: 100%;
+  filter: brightness(120%);
+}
+
+.package-bg-a { 
+  background-image: url('../assets/big-lagoon.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+.package-bg-b { 
+  background-image: url('../assets/cudugnon-cave.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+.package-bg-c { 
+  background-image: url('../assets/secret-beach.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+
+.package-content { 
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 40vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.package-content-text { 
+  font-size: var(--content);
+  font-family: "Poppins", sans-serif;
+  color: #2B3533;
+}
+
+.package-title {
+  text-align: right;
+  font-size: var(--title);
+  font-family: "Feeling Passionate", sans-serif;
+  color: #859657;
+  text-align: center;
+}
+
+.package-title-a { 
+  margin-top: var(--margin-a);
+}
+.package-title-b { 
+  margin-top: var(--margin-b);
+}
+.package-title-c { 
+  margin-top: var(--margin-c);
+}
+
+@media only screen and (max-width: 1300px) {
+  .sticky-section { 
+      --title: 50px;
+      --content: 20px;
+  }
+}
+
+@media only screen and (max-height: 1000px) {
+  .sticky-section { 
+      --title: 50px;
+      --content: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .sticky-section {
+      --margin-a: 30px;
+      --margin-b: 30px;
+      --margin-c: 30px;
+  }
+
+  .sticky-container { 
+      flex-direction: column-reverse;
+  }
+  .left-column { 
+      width: 80%;
+  }
+  .right-column { 
+      width: 100%;
+      height: calc(100%-10px);
+      margin-top: 10px;
+  }
+  .package-title { 
+      background-color: white;
+  }
+}

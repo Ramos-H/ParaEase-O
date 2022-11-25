@@ -339,6 +339,51 @@
         <img class="map my-5" src="assets/map.jpg" alt="Map">
       </div>
     </section>
+
+    <section class="sticky-section">
+      <div class="sticky-container package-a-container">
+        <div class="left-column left-column-package-a">
+          <h2 class="package-title package-title-a">Tour A</h2>
+          <div class="package-content package-content-a">
+            <p class="package-content-text">Big Lagoon</p>
+            <p class="package-content-text">Secret Lagoon</p>
+            <p class="package-content-text">Seven Commando</p>
+            <p class="package-content-text">Small Lagoon</p>
+            <p class="package-content-text">Shimizu Island</p>
+          </div>
+        </div>
+        <div class="right-column package-bg-a"></div>
+      </div>
+
+      <div class="sticky-container package-b-container">
+        <div class="left-column">
+          <h2 class="package-title package-title-b">
+            Tour B
+          </h2>
+          <div class="package-content package-content-b">
+            <p class="package-content-text">Cudugnon Cave</p>
+            <p class="package-content-text">Entalula Beach</p>
+            <p class="package-content-text">Pinagbuyutan Island</p>
+            <p class="package-content-text">Snake Island</p>
+          </div>
+        </div>
+        <div class="right-column package-bg-b"></div>
+      </div>
+
+      <div class="sticky-container package-c-container">
+        <div class="left-column">
+          <h1 class="package-title package-title-c">Tour C</h1>
+          <div class="package-content package-content-c">
+            <p class="package-content-text">Helicopter Island</p>
+            <p class="package-content-text">Matinloc Shrine</p>
+            <p class="package-content-text">Hidden Beach</p>
+            <p class="package-content-text">Star Beach</p>
+            <p class="package-content-text">Secret Beach</p>
+          </div>
+        </div>
+        <div class="right-column package-bg-c"></div>
+      </div>
+    </section>
     <!--Bootstrap JS bundle-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
