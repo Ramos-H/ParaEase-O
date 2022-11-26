@@ -134,8 +134,8 @@
             <div class="response" style="display: none;">
               <div class="row">
                 <div class="col">
-                  <h2>Booked Successfully!</h2>
-                  <p class="mb-5">See you in El Nido!</p>
+                  <h2>Your inquiry has been submitted!</h2>
+                  <p class="mb-5">We will contact you soon regarding your inquiry.</p>
                   <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>
@@ -211,8 +211,8 @@
             <div class="response" style="display: none;">
               <div class="row">
                 <div class="col">
-                  <h2>Booked Successfully!</h2>
-                  <p class="mb-5">See you in El Nido!</p>
+                  <h2>Your inquiry has been submitted!</h2>
+                  <p class="mb-5">We will contact you soon regarding your inquiry.</p>
                   <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>
@@ -293,8 +293,8 @@
             <div class="response" style="display: none;">
               <div class="row">
                 <div class="col">
-                  <h2>Booked Successfully!</h2>
-                  <p class="mb-5">See you in El Nido!</p>
+                  <h2>Your inquiry has been submitted!</h2>
+                  <p class="mb-5">We will contact you soon regarding your inquiry.</p>
                   <p class="mt-5">Please don't navigate away from this page. You will be redirected to the homepage after a few seconds.</p>
                 </div>
               </div>

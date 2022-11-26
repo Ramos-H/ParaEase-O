@@ -37,7 +37,7 @@
           </div>
           <div class="col">
             <h4 class="h4-activities text-start">Freediving</h4>
-            <p class="p-activities text-start">The goal of freediving is to have as minimal damage on the environment as possible while enjoying the water in its natural and tranquil state. And there are more leisure opportunities than ever before. More and more dive shops are providing opportunities to acquire the skills of this aquatic activity as freediving gains popularity. When done properly, freediving is a tranquilizing exercise that enables you to forge new connections with the underwater world.</p>
+            <p class="p-activities text-start">The goal of freediving is to have as minimal damage on the environment as possible while enjoying the water in its natural and tranquil state. And there are more leisure opportunities than ever before. More and more dive shops are providing opportunities to acquire the skills of this aquatic activity as freediving gains popularity.</p>
           </div>
         </div>
 
