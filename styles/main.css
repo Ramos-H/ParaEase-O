@@ -567,7 +567,7 @@ input{
       flex-direction: column-reverse;
   }
   .left-column { 
-      width: 80%;
+      width: 100%;
   }
   .right-column { 
       width: 100%;
@@ -577,4 +577,13 @@ input{
   .package-title { 
       background-color: white;
   }
+}
+
+.response {
+  margin-top: 5%;
+}
+
+.response h2 {
+  font-family: "Feeling Passionate",sans-serif;
+  color: #606C5F;
 }

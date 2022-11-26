@@ -11,6 +11,7 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     
     <link rel="shortcut icon" href="assets/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/admin.css">
     <script src="scripts/admin.js"></script>
   </head>
   
@@ -36,8 +37,10 @@
           <button class="nav-link <?php if($has_tab && ($tab === 'change_credentials')) { echo 'active'; } ?>" id="change_credentials-tab" data-bs-toggle="tab" data-bs-target="#change_credentials" type="button" role="tab" aria-controls="change_credentials" aria-selected="false">Change Credentials</button>
         </li>
         
-        <div class="d-flex flex-row-reverse align-items-center justify-content-end ms-auto">
-          <a class="btn btn-primary" href="php/logout.php">Log out</a>
+        <div class="d-flex flex-row-reverse align-items-center justify-content-end ms-auto mx-4 my-1">
+          <a href="php/logout.php">
+            <button class="logout-btn">LOGOUT</button>
+            </a>
         </div>
       </ul>
     
@@ -56,10 +59,10 @@
             <!-- Buttons -->
             <div class="row flex-shrink-1 pb-2">
               <div class="col">
-                <button type="button" class="btn btn-primary" onclick="select_all('feedbacks')">Select all</button>
-                <button type="button" class="btn btn-secondary" onclick="select_none('feedbacks')">Select none</button>
-                <button type="submit" form="form_feedbacks" name="status" value="multiple_resolve" class="btn btn-primary">Mark as resolved</button>
-                <button type="submit" form="form_feedbacks" name="status" value="multiple_unresolve" class="btn btn-secondary">Mark as unresolved</button>
+                <button type="button" class="admin-btn" onclick="select_all('feedbacks')">Select all</button>
+                <button type="button" class="admin-btn secondary-admin-btn" onclick="select_none('feedbacks')">Select none</button>
+                <button type="submit" form="form_feedbacks" name="status" value="multiple_resolve" class="admin-btn">Mark as resolved</button>
+                <button type="submit" form="form_feedbacks" name="status" value="multiple_unresolve" class="admin-btn secondary-admin-btn">Mark as unresolved</button>
               </div>
             </div>
     
@@ -125,10 +128,10 @@
             <!-- Buttons -->
             <div class="row flex-shrink-1 pb-2">
               <div class="col">
-                <button type="button" class="btn btn-primary" onclick="select_all('package_inquiries')">Select all</button>
-                <button type="button" class="btn btn-secondary" onclick="select_none('package_inquiries')">Select none</button>
-                <button type="submit" form="form_package_inquiries" name="status" value="multiple_resolve" class="btn btn-primary">Mark as resolved</button>
-                <button type="submit" form="form_package_inquiries" name="status" value="multiple_unresolve" class="btn btn-secondary">Mark as unresolved</button>
+                <button type="button" class="admin-btn" onclick="select_all('package_inquiries')">Select all</button>
+                <button type="button" class="admin-btn secondary-admin-btn" onclick="select_none('package_inquiries')">Select none</button>
+                <button type="submit" form="form_package_inquiries" name="status" value="multiple_resolve" class="admin-btn">Mark as resolved</button>
+                <button type="submit" form="form_package_inquiries" name="status" value="multiple_unresolve" class="admin-btn secondary-admin-btn">Mark as unresolved</button>
               </div>
             </div>
 
@@ -232,7 +235,7 @@
               <div class="invalid-feedback"><?php if(!check_str_empty($errors['confirm_password'])) { echo htmlspecialchars($errors['confirm_password']); } ?></div>
             </div>
             <!-- Submit -->
-            <button type="submit" class="btn btn-primary" form="form_change_credentials" name="submit" value="change_creds">Change</button>
+            <button type="submit" class="admin-btn" form="form_change_credentials" name="submit" value="change_creds">Change</button>
           </div>
         </div>
       </div>
