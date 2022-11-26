@@ -567,7 +567,7 @@ input{
       flex-direction: column-reverse;
   }
   .left-column { 
-      width: 80%;
+      width: 100%;
   }
   .right-column { 
       width: 100%;
